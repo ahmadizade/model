@@ -1,3 +1,7 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+site_homepage:
+    path: /
+    controller: App\Controller\Site\IndexController::index
+
+panel:
+    path: /panel
+    controller: App\Controller\Panel\PanelController::index
