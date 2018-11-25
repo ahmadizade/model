@@ -36,3 +36,15 @@ services:
     PDate:
         alias: App\Service\PersianTime
         public: true
+
+    validation:
+        alias: App\Service\Validation
+        public: true
+
+    api:
+        alias: App\Service\ApiHelper
+        public: true
+
+    db:
+        alias: App\Service\DateBase
+        public: true
