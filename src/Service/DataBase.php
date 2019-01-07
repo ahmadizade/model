@@ -11,7 +11,7 @@ use Symfony\Bridge\Monolog\Logger;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\DependencyInjection\Container;
 
-class DateBase extends Controller
+class DataBase extends Controller
 {
     protected $em;
     public $query;

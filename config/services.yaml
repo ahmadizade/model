@@ -44,7 +44,3 @@ services:
     api:
         alias: App\Service\ApiHelper
         public: true
-
-    db:
-        alias: App\Service\DateBase
-        public: true
