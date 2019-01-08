@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Users;
 
 use App\Service\DataBase;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

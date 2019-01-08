@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\Admin\Pages;
 
 use App\Entity\Pages;
 use App\Service\ApiHelper;
