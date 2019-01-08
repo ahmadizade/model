@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class LogoutController extends AbstractController
 {
     /**
-     * @Param ApiHelper $apiHelper
+     * @param ApiHelper $apiHelper
      * @Route("/account/logout", name="logout")
      */
     public function index(ApiHelper $apiHelper)
