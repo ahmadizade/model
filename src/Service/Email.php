@@ -17,7 +17,7 @@ class Email extends AbstractController
     {
         $transport = new \Swift_SmtpTransport('mail.setarehvanak.com',587);
         $transport->setUsername('site@setarehvanak.com');
-        $transport->setPassword('1234567890');
+        $transport->setPassword('XXXXXX');
         $mailer = new \Swift_Mailer($transport);
 
         if (!empty($attachment)){
