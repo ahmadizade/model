@@ -20,7 +20,7 @@ class Pages
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $slug;
+    private $page_slug;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -72,21 +72,14 @@ class Pages
         return $this->page_id;
     }
 
-    public function setPageId(int $page_id): self
+    public function getPageSlug(): ?string
     {
-        $this->page_id = $page_id;
-
-        return $this;
+        return $this->page_slug;
     }
 
-    public function getSlug(): ?string
+    public function setPageSlug(string $page_slug): self
     {
-        return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
+        $this->page_slug = $page_slug;
 
         return $this;
     }
@@ -135,8 +128,11 @@ class Pages
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    public function setUpdatedAt(?\DateTimeInterface $updated_at = null): self
     {
+        if(!$updated_at)
+            $updated_at = new \DateTime();
+
         $this->updated_at = $updated_at;
 
         return $this;
@@ -147,19 +143,22 @@ class Pages
         return $this->deleted_at;
     }
 
-    public function setDeletedAt(\DateTimeInterface $deleted_at): self
+    public function setDeletedAt(\DateTimeInterface $deleted_at = null): self
     {
+        if(!$deleted_at)
+            $deleted_at = new \DateTime();
+
         $this->deleted_at = $deleted_at;
 
         return $this;
     }
 
-    public function getStatus(): ?int
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    public function setStatus(int $status): self
+    public function setStatus(string $status): self
     {
         $this->status = $status;
 
