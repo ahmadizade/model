@@ -1,0 +1,100 @@
+{% extends 'layouts/Admin.html.twig' %}
+
+{% block main %}
+
+    <link href="{{ asset("assets/vendors/switchery/dist/switchery.min.css") }}" rel="stylesheet">
+
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Add Page
+                <small>please complete fields for create a page</small>
+            </h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br/>
+            <form method="post">
+                <table>
+                    {% for route in allRoutes %}
+                        <tr>
+                            <td>
+                                <input type="hidden"   name="rules[{{ route.key }}]" value="0">
+                                <input type="checkbox" name="rules[{{ route.key }}]" value="1" {{ rulesKey[route.key] is defined ? 'checked' : '' }}>
+                                {{ route.label }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <button type="submit">save</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_footer_scripts %}
+    <!-- Switchery -->
+    <script src="{{ asset('assets/vendors/switchery/dist/switchery.min.js') }}"></script>
+    <script>
+        $(function () {
+
+            $('#page_form').on('submit', function (e) {
+/*
+                e.preventDefault();
+*/
+
+                for ( instance in CKEDITOR.instances ) {
+                    CKEDITOR.instances[instance].updateElement();
+                }
+
+                $.ajax({
+                    url: $('#page_form').attr('data-url'),
+                    method: 'post',
+                    data: $('#page_form').serializeArray(),
+                    success: function (data) {
+                        if(data.status === '1'){
+                            $('#page_form').attr('data-url',data.editUrl);
+                            $('button[type=submit]').html('Edit');
+                            Swal({
+                                type: 'success',
+                                text: data.message,
+                                showConfirmButton: false,
+                                html: data.message+'<hr><button class="btn btn-success" id="addNew"><i class="fa fa-plus"></i> Add New Page</button> <button class="btn btn-warning" id="showAll"><i class="fa fa-clone"></i> Show All Pages</button> <button class="btn btn-info" id="mcontinue">Continue Editing</button>',
+                                onBeforeOpen: () => {
+                                    const content = Swal.getContent();
+                                    const $ = content.querySelector.bind(content);
+                                    const showAll = $('#showAll');
+                                    const addNew = $('#addNew');
+                                    const mcontinue = $('#mcontinue');
+
+                                    mcontinue.addEventListener('click', () => {
+                                        Swal.closeModal()
+                                    });
+
+                                    addNew.addEventListener('click', () => {
+                                        window.location.replace("{{ path('admin_add_page') }}");
+                                    });
+
+                                    showAll.addEventListener('click', () => {
+                                        window.location.replace("{{ path('admin_all_pages') }}");
+                                    })
+                                }
+
+                            });
+                        }else if(data.status === '0'){
+                            Swal({
+                                type: 'warning',
+                                text: data.message
+                            });
+                        }
+                    },
+                    error: function (data) {
+                        Swal({
+                            type: 'warning',
+                            text: 'Error'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

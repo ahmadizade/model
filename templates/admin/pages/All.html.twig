@@ -1,0 +1,85 @@
+{% extends 'layouts/AdminLayout.html.twig' %}
+
+    {% block custom_styles %}
+        <!-- Datatables -->
+        <link href="{{ asset("assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css") }}" rel="stylesheet">
+        <link href="{{ asset("assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css") }}" rel="stylesheet">
+        <link href="{{ asset("assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css") }}" rel="stylesheet">
+    {% endblock %}
+
+{% block main %}
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>All Pages</h2>
+                <div class="navbar-right">
+                    <a href="{{ path('admin_add_page') }}" class="btn btn-success">Add</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="categories_table" class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Slug</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for page in pages %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ page.page_id }}</td>
+                            <td>{{ page.page_title }}</td>
+                            <td>{{ page.page_slug }}</td>
+                            <td>{{ page.page_type }}</td>
+                            <td>{{ page.status }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="false"><span class="status">{{ page.status }}</span><span class="caret"></span> </button>
+                                    <ul role="menu" class="dropdown-menu set-status" data-url="{{ path('admin_edit_page',{'pageId':page.page_id}) }}">
+                                        <li data-action="active" >Active</li>
+                                        <li data-action="inactive" >Inactive</li>
+                                        <li data-action="archive" >Archive</li>
+                                        <li data-action="delete" >Delete</li>
+                                    </ul>
+                                </div>
+                                <a href="{{ path('admin_edit_page',{'page_id':page.page_id}) }}" class=""><i class="fa fa-edit fa-2x"></i></a>
+                                <a href="{{ path('admin_all_to_medias',{'reference_type':'page','reference_id':page.page_id}) }}" class=""><i class="fa fa-file-image-o fa-2x"></i></a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_footer_scripts %}
+    <!-- Datatables -->
+    <script src="{{ asset('assets/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('assets/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/admin-scripts.js') }}"></script>
+
+    <script>
+        (function () {
+            $('#categories_table').DataTable();
+        })();
+    </script>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'layouts/AdminLayout.html.twig' %}
+
+{% block main %}
+    <!-- Datatables -->
+    <link href="{{ asset("assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css") }}" rel="stylesheet">
+    {#<link href="{{ asset("assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css") }}" rel="stylesheet">#}
+    {#<link href="{{ asset("assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css") }}" rel="stylesheet">#}
+    <link href="{{ asset("assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css") }}" rel="stylesheet">
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>All Medias</h2>
+                <div class="navbar-right">
+                    {% if type is defined and type == 'allto' %}
+                        <a href="{{ path('admin_add_to_media',{'reference_type':reference_type,'reference_id':reference_id}) }}" class="btn btn-success">Add To</a>
+                    {% else %}
+                        <a href="{{ path('admin_add_media') }}" class="btn btn-success">Upload</a>
+                    {% endif %}
+
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="categories_table" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>URL</th>
+                            <th>mime</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for media in medias %}
+                        <tr>
+                            <td>{{ media.media_id }}</td>
+                            <td><a href="{{ asset( media.uri ) }}" target="_blank"><img src="{{ asset( media.uri ) }}" alt="" width="50" height="50"></a> </td>
+                            <td>{{ media.mime }}</td>
+                            <td>
+                                <a href="#" class="copy-media" data-url="{{ absolute_url(asset(media.uri)) }}"><i class="fa fa-clone fa-2x"></i></a>
+                                <div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" aria-expanded="false"><span class="status">Actions</span><span class="caret"></span> </button>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="#" class="set-status" data-action="delete-media" data-url="{{ path('admin_remove_to_media',{'media_relation_id':media.media_id}) }}" data-id="{{ media.media_id }}">Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+    {% block custom_footer_scripts %}
+        <!-- Datatables -->
+        <script src="{{ asset('assets/vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/jszip/dist/jszip.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/pdfmake/build/pdfmake.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/pdfmake/build/vfs_fonts.js') }}"></script>
+        <script src="{{ asset('assets/admin/js/admin-scripts.js') }}"></script>
+
+        <script>
+          (function () {
+            $('#categories_table').DataTable();
+          })();
+        </script>
+    {% endblock %}

@@ -16,6 +16,7 @@ class Security extends AbstractController
     private $requestStack;
     private $log;
     private $dataBase;
+    public $restrictedRoles;
 
     public function __construct(EntityManagerInterface $entityManager,RequestStack $requestStack, Log $log, DataBase $dataBase)
     {
@@ -23,6 +24,7 @@ class Security extends AbstractController
         $this->dataBase = $dataBase;
         $this->requestStack = $requestStack;
         $this->log = $log;
+        $this->restrictedRoles = ['1' => 'sysadmin', '2' => 'typical user'];
     }
 
     public function getUser()
@@ -47,7 +49,6 @@ class Security extends AbstractController
             return null;
         return $session->get('user_id');
     }
-
 
     public function LogRequest($status = 1, $route = null, $params = [])
     {
@@ -130,5 +131,13 @@ class Security extends AbstractController
         }
         return false;
 
+    }
+
+    // akbar ride to in AKBAR RIIIIIIID
+    // if null it is for core
+    public function getRolesList($roleType = 'core')
+    {
+        $query = "SELECT * FROM roles WHERE `role_type` = :role_type ORDER BY role_id DESC";
+        return $this->dataBase->fetchAll($query, ['role_type' => $roleType]);
     }
 }

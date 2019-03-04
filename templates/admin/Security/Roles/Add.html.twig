@@ -1,0 +1,102 @@
+{% extends 'layouts/Admin.html.twig' %}
+
+{% block main %}
+
+    <link href="{{ asset("assets/vendors/switchery/dist/switchery.min.css") }}" rel="stylesheet">
+
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>{{ role is defined ? 'Edit Role' : 'Add Role' }}</h2>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br/>
+            <form class="form-horizontal form-label-left col-lg-8 center-margin" id="admin_form" data-url="{{ role is defined ? path('admin_edit_role',{'roleId' : role.role_id}) : path('admin_add_role')  }}">
+
+                <div class="form-group">
+                    <label >Role Name <span class="required">*</span></label>
+                    <input type="text" name="role_name" class="form-control" placeholder="Role Name" required="required" value="{{ role.role_name  is defined ? role.role_name : ''}}">
+                </div>
+
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg submit-tour">{{ role is defined ? 'Edit' : 'Save' }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_footer_scripts %}
+
+    <script>
+        $(function () {
+
+            $('#admin_form').on('submit', function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: $('#admin_form').attr('data-url'),
+                    method: 'post',
+                    data: $('#admin_form').serializeArray(),
+                    success: function (data) {
+                        if(data.status === '1'){
+                            $('#admin_form').attr('data-url',data.editUrl);
+                            $('button[type=submit]').html('Edit');
+                            if(typeof Swal === "undefined"){
+                                alert(data.message);
+                            }else{
+                                Swal({
+                                    type: 'success',
+                                    text: data.message,
+                                    showConfirmButton: false,
+                                    html: data.message+'<hr><button class="btn btn-success" id="addNew"><i class="fa fa-plus"></i> Add New Role</button> <button class="btn btn-warning" id="showAll"><i class="fa fa-clone"></i> Show All Roles</button> <button class="btn btn-info" id="mcontinue">Continue Editing</button>',
+                                    onBeforeOpen: () => {
+                                        const content = Swal.getContent();
+                                        const $ = content.querySelector.bind(content);
+                                        const showAll = $('#showAll');
+                                        const addNew = $('#addNew');
+                                        const mcontinue = $('#mcontinue');
+
+                                        mcontinue.addEventListener('click', () => {
+                                            Swal.closeModal()
+                                        });
+
+                                        addNew.addEventListener('click', () => {
+                                            window.location.replace("{{ path('admin_add_role') }}");
+                                        });
+
+                                        showAll.addEventListener('click', () => {
+                                            window.location.replace("{{ path('admin_all_roles') }}");
+                                        })
+                                    }
+
+                                });
+                            }
+
+                        }else if(data.status === '0'){
+                            if(typeof Swal === "undefined"){
+                                alert(data.message);
+                            }else {
+                                Swal({
+                                    type: 'warning',
+                                    text: data.message
+                                });
+                            }
+                        }
+                    },
+                    error: function (data) {
+                        if(typeof Swal === "undefined"){
+                            alert(data.message);
+                        }else {
+                            Swal({
+                                type: 'warning',
+                                text: 'Error'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock custom_footer_scripts %}

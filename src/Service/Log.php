@@ -12,13 +12,11 @@ class Log extends Controller
 
     private $em;
     protected $container;
-    protected $security;
 
-    public function __construct(ContainerInterface $container, EntityManagerInterface $em, Security $security)
+    public function __construct(ContainerInterface $container, EntityManagerInterface $em)
     {
         $this->container = $container;
         $this->em = $em;
-        $this->security = $security;
     }
 
     public function Log($e='', $params = '')

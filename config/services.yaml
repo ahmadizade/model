@@ -44,3 +44,7 @@ services:
     api:
         alias: App\Service\ApiHelper
         public: true
+
+    App\EventListener\AuthorisationListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request }

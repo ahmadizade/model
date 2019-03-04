@@ -132,7 +132,7 @@ class PagesController extends AbstractController
      * @param integer $page_id
      * @param ApiHelper $apiHelper
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/admin/page/archive/{page_id}", name="admin_archive_page", defaults={"page_id"=0})
+     * @Route("/admin/page/archive/{page_id}", name="admin_archive_page")
      */
     public function archive($page_id, ApiHelper $apiHelper)
     {
@@ -159,7 +159,7 @@ class PagesController extends AbstractController
      * @param integer $page_id
      * @param ApiHelper $apiHelper
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/admin/page/delete/{page_id}", name="admin_delete_page", defaults={"page_id"=0})
+     * @Route("/admin/page/delete/{page_id}", name="admin_delete_page")
      */
     public function delete($page_id, ApiHelper $apiHelper)
     {
@@ -187,6 +187,7 @@ class PagesController extends AbstractController
      */
     public function updateParam($page_id, ApiHelper $apiHelper)
     {
+        return;
         $repository = $this->getDoctrine()->getRepository(Pages::class);
         $page = $repository->find($page_id);
         if (!$page)
@@ -227,5 +228,46 @@ class PagesController extends AbstractController
         $slug = strtolower($slug);
         $slug = str_replace(' ', '_', $slug);
         return urlencode($slug);
+    }
+
+    /**
+     * @return array
+     */
+    public function registerRouts(){
+        return [
+            [
+                'key' => 'allPages',
+                'label' => 'مشاهده لیست تمام صفحات',
+                /*'methods' => ['get'],*/
+                'route_name' => 'admin_all_pages',
+            ],
+            [
+                'key' => 'addPage',
+                'label' => 'افزودن صفحه جدید',
+                'route_name' => 'admin_add_page',
+            ],
+            [
+                'key' => 'showPage',
+                'label' => 'مشاهده اطلاعات صفحه',
+                'methods' => ['get'],
+                'route_name' => 'admin_edit_page',
+            ],
+            [
+                'key' => 'editPage',
+                'label' => 'ویرایش اطلاعات صفحه',
+                'methods' => ['post'],
+                'route_name' => 'admin_edit_page',
+            ],
+            [
+                'key' => 'archivePage',
+                'label' => 'آرشیو صفحه',
+                'route_name' => 'admin_archive_page',
+            ],
+            [
+                'key' => 'deletePage',
+                'label' => 'حذف صفحه',
+                'route_name' => 'admin_delete_page',
+            ],
+        ];
     }
 }

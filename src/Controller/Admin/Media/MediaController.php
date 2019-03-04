@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MediaController extends AbstractController
 {
+
     /**
      * @param DataBase $dataBase
      * @return \Symfony\Component\HttpFoundation\Response
@@ -192,4 +193,38 @@ class MediaController extends AbstractController
 
         return $apiHelper->CustomResponse('media not found!',1);
     }*/
+
+    /**
+     * @return array
+     */
+    public function registerRouts(){
+        return [
+            [
+                'key' => 'allMedia',
+                'label' => 'مشاهده لیست تمام رسانه ها',
+                /*'methods' => ['get'],*/
+                'route_name' => 'admin_all_medias',
+            ],
+            [
+                'key' => 'addMedia',
+                'label' => 'افزودن رسانه جدید',
+                'route_name' => 'admin_add_media',
+            ],
+            [
+                'key' => 'allToMedia',
+                'label' => 'مشاهده لیست رسانه های یک موجودیت',
+                'route_name' => 'admin_all_to_medias',
+            ],
+            [
+                'key' => 'addToMedia',
+                'label' => 'افزودن رسانه به موجودیت',
+                'route_name' => 'admin_add_to_medias',
+            ],
+            [
+                'key' => 'removeToMedia',
+                'label' => 'حذف رابطه رسانه با موجودیت',
+                'route_name' => 'admin_remove_to_media',
+            ],
+        ];
+    }
 }

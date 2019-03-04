@@ -134,4 +134,86 @@ class Media extends Controller
 
     }
 
+    public function asset($path, $whq = null, $packageName = null)
+    {
+
+        try {
+
+            $fullPath = $this->packages->getUrl($path, $packageName);
+            if ($whq === null) {
+                return $fullPath ;
+            }
+
+            $webPath = realpath($this->container->getParameter('kernel.root_dir') . '/../public');
+
+            $fileModificationTime = filesize($webPath.'/'.$fullPath);
+
+            //'dirname' => 'media\\tour\\74',
+            //'basename' => 'istanbul41529907717.jpg',
+            //'extension' => 'jpg',
+            //'filename' => 'istanbul41529907717',
+            $pathinfo = pathinfo($path);
+
+            // protect against traverse
+            $whq = explode('_', strval($whq));
+            $whq = [
+                0 => (isset($whq[0]) && !empty($whq[0]) ? intval($whq[0]) : ''),
+                1 => (isset($whq[1]) && !empty($whq[1]) ? intval($whq[1]) : ''),
+                2 => (isset($whq[2]) && !empty($whq[2]) ? intval($whq[2]) : ''),
+            ];
+
+            $imageName = $pathinfo['filename'] .'_'. implode($this->filterParamsSepareor, $whq) .'_'. $fileModificationTime .'.' . $pathinfo['extension'];
+            $imageFullPath = $pathinfo['dirname'] . DIRECTORY_SEPARATOR . $imageName;
+
+
+            // return if resized file exist
+            if (file_exists($this->get('kernel')->getProjectDir() . '/public/'.$imageFullPath)) {
+                return $this->packages->getUrl($imageFullPath, $packageName);
+            }else{
+                // remove if other modification exists;
+
+                $finder = new Finder();
+                $finder = $finder->files()->in($pathinfo['dirname'])->name('/^(.+)\_([0-9])*\_([0-9])*\_([0-9])*\_([0-9])*([0-9]+)\.(.{2,6})$/');
+                $fs = new Filesystem();
+                foreach ($finder as $find){
+                    $fs->remove($find->getPathname());
+                }
+
+            }
+
+            $details = [];
+            if (!$whq[0] && !$whq[1]) {
+            } elseif ($whq[0] && $whq[1]) {
+                $details['width'] = $whq[0];
+                $details['height'] = $whq[1];
+            } elseif ($whq[0]) {
+                $details['width'] = $whq[0];
+            } elseif ($whq[1]) {
+                $details['height'] = $whq[1];
+            }
+            if ($whq[2]) {
+                $details['quality'] = $whq[2];
+            } else {
+                $details['quality'] = 67;
+            }
+            $details['name'] = $imageName;
+
+            $file = new UploadedFile($this->get('kernel')->getProjectDir() . '/public/'.$fullPath,$pathinfo['filename'].'.'.$pathinfo['extension']);
+            $details['upload_path'] = $pathinfo['dirname'];
+
+            $p = $this->uploader->Resize($file,$details);
+
+
+            if(is_array($p ))
+                return $this->packages->getUrl($p['uri'],$packageName);
+
+        } catch (\Exception $e) {
+            $request = $this->container->get('request_stack')->getCurrentRequest();
+            $this->container->get('log')->Log($request, $e);
+        }
+
+        return $this->packages->getUrl($path,$packageName);
+
+    }
+
 }
