@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\FileBag;
 
 class Uploader extends AbstractController
 {
@@ -28,7 +29,7 @@ class Uploader extends AbstractController
             'gif' => 'image/gif'
         ];
 
-        $this->imageMime = [
+        $this->videoMime = [
             'mp4' => 'video/mp4',
             'avi' => 'video/avi'
         ];
@@ -38,9 +39,25 @@ class Uploader extends AbstractController
         ];
     }
 
-    public function UpdateImage(UploadedFile $file = null, $params = []){
+    public function BulkUpload(FileBag $files = null, $params = []){
+        $result = [];
+        foreach ($files as $file){
+            $result[] = $this->UploadFile($file, $params);
+        }
+        return $result;
+    }
+
+    public function UploadImage(UploadedFile $file = null, $params = []){
         if($this->getFileType($file) != 'image'){
             $this->message = 'invalid image';
+            return null;
+        }
+        return $this->UploadFile($file, $params);
+    }
+
+    public function UploadVideo(UploadedFile $file = null, $params = []){
+        if($this->getFileType($file) != 'video'){
+            $this->message = 'invalid video';
             return null;
         }
         return $this->UploadFile($file, $params);
@@ -51,14 +68,18 @@ class Uploader extends AbstractController
             $this->message = 'no file selected';
             return null;
         }
+        $renamed = false;
 
-        if(isset($params['resize']))
-            return $this->Resize($file, $params);
+        // just resize images for know
+        if((isset($params['resize']) || isset($params['height']) || isset($params['width']) || isset($params['quality'])) && $this->getFileType($file) == 'image')
+            return $this->ResizeImage($file, $params);
 
         $params = $params + ['type' => 'general'] ;
 
-        if(!$this->isValid($file))
+        if(!$this->isValid($file)){
+            $this->message = 'file format is not valid';
             return null;
+        }
 
         $fileInfo = $this->getFileInfo($file);
 
@@ -66,9 +87,11 @@ class Uploader extends AbstractController
         if(isset($params['rand_name'])){
             $baseName = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $this->random_string(20));
             $baseName = mb_ereg_replace("([\.]{2,})", '', $baseName);
+            $renamed = true;
         } elseif(isset($params['name'])){
             $baseName = mb_ereg_replace("([^\w\s\d\-_~,;\[\]\(\).])", '', $params['name']);
             $baseName = mb_ereg_replace("([\.]{2,})", '', $baseName);
+            $renamed = true;
         }else
             $baseName = $fileInfo['base_name'];
 
@@ -90,25 +113,29 @@ class Uploader extends AbstractController
         $desPathName = $upload_path.DIRECTORY_SEPARATOR.$name ;
         while ($fs->exists($desPathName)){
             $rand = substr(uniqid(rand(), true), 0, 5);
-            $fileInfo['base_name'] = $baseName . $rand;
+            $baseName = $baseName . $rand;
             $name = $baseName.'.'.$fileInfo['ext'];
             $desPathName = $upload_path.DIRECTORY_SEPARATOR.$name ;
         }
 
         $file->move($upload_path,$name);
 
-        return  $fileInfo +['uri' => $desPathName, 'name' => $fileInfo['full_name']];
+        if($renamed){
+            return  ['hash' => sha1_file($desPathName), 'uri' => $desPathName,'name' => $name,'base_name'=>$baseName,'old_name' => $fileInfo['name'], 'old_base_name' => $fileInfo['base_name']] + $fileInfo;
+        }
+
+        return  [ 'hash' => sha1_file($desPathName) , 'uri' => $desPathName] + $fileInfo;
 
     }
 
-    public function Resize(UploadedFile $file = null, $params = []){
+    public function ResizeImage(UploadedFile $file = null, $params = []){
         if(!$file)
             return null;
 
         if(!$this->IsValidImage($file))
             return null;
 
-        $params = $params + ['width' => null, 'height' => null, 'quality' => 100, 'transparent' => false];
+        $params = $params + ['width' => null, 'height' => null, 'quality' => 100, 'transparent' => false, 'type' => 'general'];
 
         if ($file->getMimeType() == 'image/jpeg') {
             $image = imagecreatefromjpeg($file->getRealPath());
@@ -123,12 +150,12 @@ class Uploader extends AbstractController
         $newHeight = $params['height'];
 
         if ($params['width'] === null && $params['height'] === null) {
-            $newWidth = $baseWidth;
-            $newHeight = $baseHeight;
+            $newWidth = (int)$baseWidth;
+            $newHeight = (int)$baseHeight;
         } elseif ($params['height'] === null) {
-            $newHeight = floor($baseHeight * ($params['width'] / $baseWidth));
+            $newHeight = (int)floor($baseHeight * ($params['width'] / $baseWidth));
         } elseif ($params['width'] === null) {
-            $newWidth = floor($baseWidth * ($params['height'] / $baseHeight));
+            $newWidth = (int)floor($baseWidth * ($params['height'] / $baseHeight));
         }
 
         $imageInfo = $this->getFileInfo($file,$params);
@@ -155,13 +182,12 @@ class Uploader extends AbstractController
         if(!$fs->exists($upload_path))
             $fs->mkdir($upload_path);
 
-        $desPathName = $upload_path.DIRECTORY_SEPARATOR.$imageInfo['full_name'] ;
-
-        while ($fs->exists($desPathName)){
+        $desPathName = $upload_path.DIRECTORY_SEPARATOR.$imageInfo['name'] ;
+        while ($fs->exists($desPathName)){  // check for duplicate name and replace by rand name
             $rand = substr(uniqid(rand(), true), 0, 5);
             $imageInfo['base_name'] = $imageInfo['base_name'] . $rand;
-            $imageInfo['full_name'] = $imageInfo['base_name'].'.'.$imageInfo['ext'];
-            $desPathName = $upload_path.DIRECTORY_SEPARATOR.$imageInfo['full_name'] ;
+            $imageInfo['name'] = $imageInfo['base_name'].'.'.$imageInfo['ext'];
+            $desPathName = $upload_path.DIRECTORY_SEPARATOR.$imageInfo['name'] ;
         }
 
         if ($imageInfo['ext'] == 'jpg') {
@@ -172,7 +198,7 @@ class Uploader extends AbstractController
             imagepng($virtual_image, $desPathName, $params['quality']);
         }
 
-        return  $imageInfo +['uri' => $desPathName, 'name' => $imageInfo['full_name']];
+        return  ['hash' => sha1_file($desPathName),'uri' => $desPathName, 'name' => $imageInfo['name'],'width' => $newWidth,'height' => $newHeight, 'old_width' => $imageInfo['width'], 'old_height' => $imageInfo['height'],'size' => filesize($desPathName) ,'old_size' => $imageInfo['size']] + $imageInfo;
 
     }
 
@@ -217,10 +243,10 @@ class Uploader extends AbstractController
         $name = $base_name.'.'.$ex;
 
         if($fileType == 'image'){
-            return ['ext' => $ex, 'full_name' => $name, 'base_name' => $base_name, 'mime' => $file->getMimeType(), 'width'=>$width, 'height'=>$height, 'size' => $file->getSize() ? $file->getSize() : 0,'type' => $fileType];
+            return ['ext' => $ex, 'name' => $name, 'base_name' => $base_name, 'mime' => $file->getMimeType(), 'width'=>$width, 'height'=>$height, 'size' => $file->getSize() ? $file->getSize() : 0,'type' => $fileType];
         }
 
-        return ['ext' => $ex, 'full_name' => $name, 'base_name' => $base_name, 'mime' => $file->getMimeType(), 'size' => $file->getSize() ? $file->getSize() : 0,'type' => $fileType];
+        return ['ext' => $ex, 'name' => $name, 'base_name' => $base_name, 'mime' => $file->getMimeType(), 'size' => $file->getSize() ? $file->getSize() : 0,'type' => $fileType];
 
     }
 

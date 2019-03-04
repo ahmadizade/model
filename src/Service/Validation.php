@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\FileBag;
 use Symfony\Component\HttpFoundation\Response;
 
 class Validation extends Controller
@@ -119,6 +120,61 @@ class Validation extends Controller
                     } elseif ($param['type'] == 'Equal') {
                         if($value != $param['default']) // TOOD Complete
                             return $this->ReturnMessage($value, $param, "حداقل تعداد کاراکتر {$param['name']} {$param['len']} حرف می باشد.");
+                    }
+                }
+
+            }
+        }
+        return ['status' => true];
+    }
+
+    public function ValidateFiles($params, FileBag $files) //TODO complete validation by type max size count and ...
+    {
+        if (is_array($params)) {
+            foreach ($params as $param) {
+                if($param['type'] == 'globals'){
+
+                }
+
+                if (substr($param['name'], 0, 1) == '[' && substr($param['name'], strlen($param['name']) - 1, 1) == ']') {
+
+                    $param['name'] = trim($param['name'], '[');
+                    $param['name'] = rtrim($param['name'], ']');
+
+                    if (!isset($values[$param['name']]) && !isset($values[trim($param['name'],'*')]))
+                        continue;
+
+                }
+
+                if (substr($param['name'], 0, 1) == '*') {
+                    $required = true;
+                    $param['name'] = trim($param['name'], '*');
+                } else
+                    $required = false;
+
+                if (!isset($values[$param['name']]))
+                    return ['message' => 'پارامترهای ارسالی صحیح نمی باشند.', 'status' => false];
+
+                $val = $values[$param['name']];
+
+                if (!is_array($val))
+                    $val = [$val];
+
+                foreach ($files as $file) {
+
+                    if (!strlen($value)) {
+                        if ($required)
+                            return $this->ReturnMessage($value, $param, "مقدار {$param['name']}  اجباری می باشد .");
+                        else
+                            continue;
+                    }
+
+                    $delimiter = '\/';
+                    if ($param['type'] === 'image') {
+                        if(isset($param['delimiter']) && $param['delimiter'] == '-')
+                            $delimiter = '\-';
+                        if ($this->PDateAction($value,$delimiter) === false)
+                            return $this->ReturnMessage($value, $param, 'لطفا تاریخ را به صورت صحیح وارد کنید');
                     }
                 }
 
