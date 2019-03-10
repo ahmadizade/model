@@ -1,0 +1,120 @@
+{% extends 'layouts/AdminLayout.html.twig' %}
+
+{% block main %}
+    <!-- Switchery -->
+    <link href="{{ asset("assets/vendors/switchery/dist/switchery.min.css") }}" rel="stylesheet">
+
+
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Add Slider
+                <small>please complete fields for create a slider</small>
+            </h2>
+            {#  <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+              </ul>#}
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br/>
+            <form class="form-horizontal form-label-left" id="reg-slider">
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Slider Title <span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="title" class="form-control" placeholder="Slider Title" required="required" value="{{ sldier.slider_title  is defined ? sldier.slider_title : ''}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Position</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="position">
+                            {% for position in positions %}
+                                <option value="{{ position }}" {{ slider.position is defined and slider.position == position   ? 'selected="selected"' : ''}}>{{ position }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Route</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="route">
+                            {% for route in routes %}
+                                <option value="{{ route }}" {{ slider.route is defined and slider.route == route   ? 'selected="selected"' : ''}}>{{ route }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">status</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="status">
+                            <option value="active" {{ slider.status is defined and slider.status == 'active'   ? 'selected="selected"' : ''}}>Active</option>
+                            <option value="inactive" {{ slider.status is defined and slider.status == 'active'   ? 'selected="selected"' : ''}}>Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="hidden" id="slider_id" value="{{ slider.slider_id  is defined ? slider.slider_id : '' }}">
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success submit-tour">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block custom_footer_scripts %}
+    <script src="{{ asset('assets/vendors/ckeditor/ckeditor.js') }}"></script>
+
+    <!-- Switchery -->
+    <script src="{{ asset('assets/vendors/switchery/dist/switchery.min.js') }}"></script>
+    <script>
+        $(function () {
+            $('#reg-slider').on('submit', function (e) {
+                e.preventDefault();
+                var url;
+                if ($('#slider_id').val() == '') {
+                    url = "{{ path("admin_add_slider") }}";
+                } else {
+                    {% if slider.slider_id  is defined %}
+                    url = "{{ path("admin_edit_page") }}/" + $('#slider_id').val();
+                    {% endif %}
+                }
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: $('#reg-slider').serializeArray(),
+                    success: function (data) {
+                        $('#slider_id').val(data.slider_id);
+                        Swal({
+                            type: 'success',
+                            text: data.message
+                        });
+                    },
+                    error: function (data) {
+                        Swal({
+                            type: 'warning',
+                            text: 'Error'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

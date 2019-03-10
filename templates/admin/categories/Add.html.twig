@@ -1,0 +1,129 @@
+{% extends 'layouts/AdminLayout.html.twig' %}
+
+{% block main %}
+    <!-- Switchery -->
+    <link href="{{ asset("assets/vendors/switchery/dist/switchery.min.css") }}" rel="stylesheet">
+
+
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Add Category<small>please complete fields for create a category </small></h2>
+            {#  <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+              </ul>#}
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <br />
+            <form class="form-horizontal form-label-left" id="reg-cat">
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Category Title <span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="title" class="form-control" placeholder="Category Title" required="required" value="{{ category.category_title  is defined ? category.category_title : ''}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Category Slug <span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="slug" class="form-control" placeholder="Category Slug" required="required" value="{{ category.category_slug  is defined ? category.category_slug : ''}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Category excerpt <span class="required">*</span></label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" name="excerpt" class="form-control" placeholder="Category excerpt" required="required" value="{{ category.excerpt  is defined ? category.excerpt : ''}}">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Category Type</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <select class="form-control" name="type">
+                            <option value="tour" selected="selected">tour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">status</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                            <select class="form-control" name="status">
+
+                                <option value="active" {{ category.status is defined and category.status == 'active'   ? 'selected="selected"' : ''}}>Active</option>
+                                <option value="inactive" {{ category.status is defined and category.status == 'inactive'  ? 'selected="selected"' : ''}}>Inactive</option>
+                            </select>
+                    </div>
+                </div>
+                <input type="hidden" id="cat_id" value="{{ category.category_id  is defined ? category.category_id : ''}}" autocomplete="off">
+                <div class="ln_solid"></div>
+                <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success submit-tour">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block custom_footer_scripts %}
+    <!-- Switchery -->
+    <script src="{{ asset('assets/vendors/switchery/dist/switchery.min.js') }}"></script>
+    <script>
+        (function () {
+            $('#reg-cat').on('submit', function (e) {
+                e.preventDefault();
+                var url;
+                if($('#cat_id').val() == ''){
+                    url = "{{ path("admin_add_category") }}";
+                }else{
+                    url = "{{ path("admin_edit_category") }}/"+$('#cat_id').val();
+                }
+                $.ajax({
+                    url: url,
+                    method: 'post',
+                    data: $('#reg-cat').serializeArray(),
+                    success: function (data) {
+                        $('#cat_id').val(data.category_id);
+                        Swal({
+                            type: 'success',
+                            text: data.message
+                        });
+                    },
+                    error: function (data) {
+                        Swal({
+                            type: 'warning',
+                            text: 'Error'
+                        });
+                    }
+                });
+            });
+            function initpickers(){
+                $('.date-input').each(function(){
+                    $(this).datetimepicker({
+                        format: 'DD-MM-YYYY',
+                        minDate: new Date(),
+                    });
+                });
+            }
+        })();
+
+
+
+    </script>
+{% endblock %}

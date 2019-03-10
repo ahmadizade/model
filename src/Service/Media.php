@@ -45,7 +45,7 @@ class Media extends Controller
                     $results[$key]['type'] = 'gallery';
                 if($result['type'] == $reference_type.'-wallpaper')
                     $results[$key]['type'] = 'wallpaper';
-                if($result['type'] == $reference_type.'-thumbnail')
+                if($result['type'] == $referSliderController.phpence_type.'-thumbnail')
                     $results[$key]['type'] = 'thumbnail';
             }
 
