@@ -28,3 +28,9 @@ framework:
 
         # APCu (not recommended with heavy random-write workloads as memory fragmentation can cause perf issues)
         #app: cache.adapter.apcu
+    assets:
+        packages:
+            cdn:
+                base_urls: ['%env(CDN_URL)%']
+#                version: '5'
+ #               version_format: '%%s?v=%%s'

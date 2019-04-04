@@ -7,7 +7,7 @@ use App\Entity\Roles;
 use App\Service\ApiHelper;
 use App\Service\DataBase;
 use App\Service\Security;
-use App\Service\Validation;
+use App\Service\Validation as Validation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;

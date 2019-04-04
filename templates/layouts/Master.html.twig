@@ -1,0 +1,341 @@
+<!doctype html>
+<html dir="rtl" lang="fa-IR" class="no-js">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="application-name" content="آژانس هواپیمایی ستاره ونک"/><!-- Site Name -->
+    <meta name="google" content="notranslate"/>
+    <meta name="designer" content="https://setarehvanak.com"/>
+    <meta name="copyright" content="&copy; 2018 setarehvanak.com"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="license" href="https://setarehvanak.com"/>
+    <meta name="author" content="Ali Rahimi">
+
+    <meta itemprop="name" content=""/><!-- Single title -->
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+    <meta name="theme-color" content="#0F6843"/><!-- Site Unique Color -->
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-title" content="ستاره ونک"/><!-- Site name -->
+    <meta name="msapplication-tooltip" content="خرید بلیط هواپیما + رزرو هتل و تور | ستاره ونک"/><!-- Site name | Site Description -->
+    <meta name="msapplication-starturl" content="https://setarehvanak.com"/><!-- Site url -->
+    <meta name="msapplication-navbutton-color" content="#0F6843"/><!-- Site Unique background Color -->
+    <meta name="msapplication-TileColor" content="#fff"/><!-- Site Unique background Color -->
+    <meta name="screen-orientation" content="portrait"/><!-- Site orientation in UC Browser -->
+    <meta name="full-screen" content="yes"/>
+    <meta name="imagemode" content="force"/>
+    <meta name="layoutmode" content="fitscreen"/>
+    <meta name="wap-font-scale" content="no"/>
+    <link rel="index" href="https://setarehvanak.com"/><!-- Site index link -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico','cdn') }}"/>
+    {# <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('assets/img/icons/57-57.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/img/icons/60-60.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/icons/72-72.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/icons/76-76.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/icons/114-114.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/img/icons/120-120.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/img/icons/144-144.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/img/icons/152-152.png','cdn') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/img/icons/180-180.png','cdn') }}">
+       <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/img/icons/192-192.png','cdn') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/img/icons/32-32.png','cdn') }}">
+        <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('assets/img/icons/48-48.png','cdn') }}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/icons/96-96.png','cdn') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/icons/16-16.png','cdn') }}">#}
+    <link rel="manifest" href="{{ asset('manifest.json','cdn')}}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/144-144.png','cdn') }}">
+    {% block meta %}{% endblock %}
+    {% block style_sheets %}
+        {#{% if app.request.getHost() != 'vanak.local' %}
+            <link rel="stylesheet" href="{{ asset('assets/css/minify.css') }}?v={{ assets_version }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}?v={{ assets_version }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/stylesheet.css') }}?v={{ assets_version }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/common-css.css') }}?v={{ assets_version }}">
+            <link rel="stylesheet" href="{{ asset('assets/css/new-styles.css') }}?v={{ assets_version }}">
+        {% endif %}#}
+        <link rel="stylesheet" href="{{ asset('assets/css/reset.css','cdn') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.css','cdn') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css','cdn') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/responsive.css','cdn') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css','cdn') }}">
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% endblock %}
+
+    {% block custom_style_sheets %}{% endblock %}
+
+    {% block header_scripts %}
+        {#<script src="{{ asset('assets/js/jquery.js') }}"></script>#}
+    {% endblock %}
+
+
+
+</head>
+<body>
+{% block body %}
+    <header id="main-header">
+        <nav class="container flex flex-between flex-c">
+            <div id="logo">
+                <h2>
+                    <a href="">
+                        مدلینگ
+                        <img src="{{ asset('assets/image/logo.png','cdn') }}" alt="" title="">
+                    </a>
+                </h2>
+            </div>
+            <div class="nav-links" >
+                <ul class="flex">
+                    <li><a href="">صفحه اصلی</a></li>
+                    <li><a href="">تماس با ما</a></li>
+                    <li><a href="">درباره ما</a></li>
+                </ul>
+            </div>
+            <div class="accounting">
+                <a href="#accounting-modal" class="fancybox accounting-btn">معروفم کن</a>
+            </div>
+        </nav>
+    </header>
+    <div class="slider"></div>
+
+    <main>
+        {% block main %}
+        <section class="black-pattern intro">
+            <div class="container">
+                <div class="flex-c ">
+                    <img src="{{ asset('assets/image/head.png') }}">
+                </div>
+                <div class="flex-c flex-around mt40">
+                    <div class="queen ">
+                        Queen
+                        <img src="{{ asset('assets/image/queen.png') }}">
+                    </div>
+                    <div class="intro">
+                        <img src="{{ asset('assets/image/intro.png') }}">
+                    </div>
+                    <div class="king">
+                        King
+                        <img src="{{ asset('assets/image/queen.png') }}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="white-pattern last-vip">
+            <div class="container" style="overflow: hidden">
+                <h2 class="heading">آخرین کاربران VIP</h2>
+                <div class="vip-slider-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="usr-box flex-column">
+                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
+                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-slider-pagination"></div>
+                    <div class="vip-slider-button-next"></div>
+                    <div class="vip-slider-button-prev"></div>
+                </div>
+
+                <div class="more flex-c mt30">
+                    <a class="cbtn btn-yellow btn-lg" href="">مشاهده لیست کاربران VIP</a>
+                </div>
+            </div>
+        </section>
+        <section class="black-pattern top-cat">
+            <div class="container-fluid" style="overflow: hidden">
+{#
+                <h2 class="heading">برترین دسته بندی ها</h2>
+#}
+                <div class="top-cat-slider-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info">
+            <h2 class="heading">نحوه کار سایت</h2>
+            <div class="container">
+                <div class="flex-around">
+                    <div class="col-7 box">
+                        <p class="title">ثبت نام</p>
+                        <p class="desc">
+                            شسشسشسشس
+                        </p>
+                    </div>
+                    <div class="col-7 box">
+                        <p class="title">ثبت نام</p>
+                        <p class="desc">
+                            شسشسشسشس
+                        </p>
+                    </div>
+                    <div class="col-7 box">
+                        <p class="title">ثبت نام</p>
+                        <p class="desc">
+                            شسشسشسشس
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock main %}
+    </main>
+
+    <footer class="black-pattern">
+        <div class="container flex flex-around info">
+            <div class="social col-8"></div>
+            <div class="newsletter col-8"></div>
+            <div class="about-us col-8">
+                <h3>درباره ما</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero maiores molestiae non nulla numquam omnis possimus provident quas quasi voluptatum! Alias consequatur cupiditate ipsam nesciunt odit praesentium provident, quis velit.</p>
+            </div>
+        </div>
+        <div class="copy-right flex flex-c">
+            تمامی حقوق این سایت متعلق به وب سایت آتیلا می باشد.
+        </div>
+    </footer>
+
+
+
+    <div id="accounting-modal" class="modal" style="display: none;max-width: 400px" >
+        <div data-tabindex="accounting" class="white-pattern">
+            <div class="tab-title">
+                <div data-tab="reg" class="active">
+                    عضویت
+                </div>
+                <div data-tab="login">
+                    ورود به پنل کاربری
+                </div>
+            </div>
+            <div class="tab-content">
+                <div data-tabc="reg" class="active">
+                    <form id="register-form" data-url="{{ path('register') }}">
+
+                        <label for="reg_phone" class="required"> شماره موبایل:</label>
+                        <input type="tel" name="phone" id="reg_phone" placeholder="" required="required">
+
+                        <label for="reg_pass" class="required"> رمز عبور:</label>
+                        <input type="password" name="password" id="reg_pass" placeholder="" required="required">
+
+                        <label for="reg_pass_conf" class="required"> تکرار رمز عبور:</label>
+                        <input type="password" name="password-conf" id="reg_pass_conf" placeholder="" required="required">
+
+
+                        <div id="registercaptcha" class="recaptcha"></div>
+
+                        <div class="flex checkbox">
+                            <input id="general-rules" name="rules" type="checkbox" >
+                            <label for="general-rules"><i class="icon-vanak-check-2"></i><a target="_blank" href="">قوانین و مقررات</a> را می پذیرم.</label>
+                        </div>
+
+                        <button type="submit" class="cbtn btn-yellow btn-lg"><span>ثبت نام <i class="icon-vanak-user no-rotate"></i></span></button>
+
+                        <div class="clearfix"></div>
+                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a href="#forget-modal">کلیک کنید</a> </span></p>
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+                <div data-tabc="login">
+                    <form id="login-form" data-url="{{ path('login') }}">
+                        <label for="login_user">شماره موبایل: </label>
+                        <input type="text" name="username" id="login_user" required >
+
+                        <label for="login_pass" >رمز عبور: </label>
+                        <input type="password" name="password" id="login_pass" required >
+
+                        <div id="recaptchaa" class="recaptcha"></div>
+
+                        <div class="flex checkbox">
+                            <input type="checkbox" id="login_remmberMe" name="remmberMe" class="checkbox">
+                            <label for="login_remmberMe">مرا به خاطر بسپار</label>
+                        </div>
+
+                        <button type="submit" class="cbtn btn-lg btn-yellow">ورود به پنل کاربری </button>
+
+                        <div class="clearfix"></div>
+                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a href="#forget">کلیک کنید</a> </span></p>
+                        <div class="clearfix"></div>
+
+                    </form>
+                    {#    <footer>
+                            <p>شما می‌توانید با اکانت <span class="bold">گــوگل</span> خود وارد شوید <a href="#"><i class="icon-vanak-google-plus"></i>ورود با اکانت گوگل</a></p>
+                        </footer>#}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block footer_scripts %}
+    <script src="{{ asset('assets/js/jquery.min.js','cdn') }}" ></script>
+    <script src="{{ asset('assets/js/jquery.fancybox.min.js','cdn') }}" ></script>
+    <script src="{{ asset('assets/js/swiper.min.js','cdn') }}" ></script>
+{% endblock %}
+    <script src="{{ asset('assets/js/scripts.js','cdn') }}" ></script>
+{% block custom_footer_scripts %}{% endblock %}
+</body>
+</html>

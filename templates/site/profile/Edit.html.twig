@@ -1,0 +1,324 @@
+{% extends 'layouts/Master.html.twig' %}
+
+{% block main %}
+    <form enctype="multipart/form-data" method="post">
+        <input type="file" name="ss">
+        <input type="submit">
+
+        <div class="type">
+            <label for="fashion_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="fashion" id="fashion_type">
+
+            <label for="commercial_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="commercial" id="commercial_type">
+
+            <label for="fitness_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="fitness" id="fitness_type">
+
+            <label for="part_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="part" id="part_type">
+
+            <label for="hair_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="hair" id="hair_type">
+
+            <label for="plussize_type"></label>
+            <input type="checkbox" name="modeling_type[]" value="plussize" id="plussize_type">
+        </div>
+
+        <div class="height">
+            <label for="height">قد :</label>
+            <input type="number" name="height" min="" max="" id="height">
+        </div>
+
+        <div class="bust">
+            <label for="bust">اندازه دور سینه :</label>
+            <input type="number" name="bust" min="" max="" id="bust">
+        </div>
+
+        <div class="weight">
+            <label for="weight">وزن :</label>
+            <input type="number" name="weight" min="" max="" id="weight">
+        </div>
+
+        <div class="waist">
+            <label for="waist">اندازه دور کمر :</label>
+            <input type="number" name="waist" min="" max="" id="waist">
+        </div>
+
+        <div class="hips">
+            <label for="hips">اندازه دور لگن :</label>
+            <input type="number" name="hips" min="" max="" id="hips">
+        </div>
+
+        <div class="shoe">
+            <label for="shoe">سایز کفش :</label>
+            <input type="number" name="shoe" min="" max="" id="shoe">
+        </div>
+
+        <div class="eys_color">
+            <label for="eys_color">رنگ چشم :</label>
+            <select name="eys_color" id="eys_color">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <div class="hair_color">
+            <label for="hair_color">رنگ مو :</label>
+            <select name="hair_color" id="hair_color">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <div class="hair_type">
+            <label for="hair_type">جنس مو :</label>
+            <select name="hair_type" id="hair_type">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <div class="skin_color">
+            <label for="skin_color">رنگ پوست :</label>
+            <select name="skin_color" id="skin_color">
+                <option value=""></option>
+            </select>
+        </div>
+
+        <div class="voice">
+            <label for="voice"></label>
+            <input type="file" name="voice" id="voice">
+        </div>
+
+        <div class="neck">
+            <label for="neck">اندازه دور گردن :</label>
+            <input type="number" name="neck" min="" max="" id="neck">
+        </div>
+
+        <div class="wrist">
+            <label for="wrist">اندازه دور مچ دست :</label>
+            <input type="number" name="wrist" min="" max="" id="wrist">
+        </div>
+
+
+
+    </form>
+
+
+
+{% endblock %}
+
+{% block custom_footer_scripts  %}
+
+    <script>
+        $(function () {
+
+
+            $('#fashion_type').click(function () {
+                if($(this).is(':checked')){
+                    fashion_check()
+                }else
+                    gg()
+            });
+
+            $('#commercial_type').click(function () {
+                if($(this).is(':checked')){
+                    commercial_check();
+                }else
+                    gg();
+            })
+
+            $('#part_type').click(function () {
+                if($(this).is(':checked')){
+                    part_check();
+                }else
+                    gg();
+            })
+
+            $('#fitness_type').click(function () {
+                if($(this).is(':checked')){
+                    fitness_check();
+                }else
+                    gg();
+            });
+
+            $('#hair_type').click(function () {
+                if($(this).is(':checked')){
+                    hair_check();
+                }else
+                    gg();
+            });
+
+            $('#plussize_type').click(function () {
+                if($(this).is(':checked')){
+                    plussize_check();
+                }else
+                    gg();
+            });
+
+
+
+        });
+
+        function gg() {
+            $('.height').hide();
+            $('.bust').hide();
+            $('.weight').hide();
+            $('.waist').hide();
+            $('.hips').hide();
+            $('.shoe').hide();
+            $('.eys_color').hide();
+            $('.hair_color').hide();
+            $('.skin_color').hide();
+            $('.voice').hide();
+            $('.neck').hide();
+            $('.wrist').hide();
+            $('.hair_type').hide();
+
+            $('.height').attr('required',false);
+            $('.weight').attr('required',false);
+            $('.bust').attr('required',false);
+            $('.waist').attr('required',false);
+            $('.hips').attr('required',false);
+            $('.shoe').attr('required',false);
+            $('.eys_color').attr('required',false);
+            $('.hair_color').attr('required',false);
+            $('.skin_color').attr('required',false);
+            $('.voice').attr('required',false);
+            $('.neck').attr('required',false);
+            $('.wrist').attr('required',false);
+            $('.hair_type').attr('required',false);
+
+
+            $('.type input').each(function () {
+                if($(this).is(':checked')){
+
+                    if($(this).val() === 'fashion' ){
+                        fashion_check();
+                    }
+                    if($(this).val() === 'part' ){
+                        part_check();
+                    }
+                    if($(this).val() === 'commercial' ){
+                        commercial_check();
+                    }
+                    if($(this).val() === 'fitness' ){
+                        fitness_check();
+                    }
+                    if($(this).val() === 'hair' ){
+                        hair_check();
+                    }
+                    if($(this).val() === 'plussize' ){
+                        plussize_check();
+                    }
+
+
+                }
+            })
+        }
+
+        function commercial_check() {
+            $('.voice').show();
+            $('.height').show();
+            $('.bust').show();
+            $('.weight').show();
+            $('.waist').show();
+            $('.hips').show();
+            $('.shoe').show();
+            $('.eys_color').show();
+            $('.hair_color').show();
+            $('.skin_color').show();
+
+            $('.height').attr('required',true);
+            $('.weight').attr('required',true);
+            $('.waist').attr('required',true);
+            $('.hips').attr('required',true);
+            $('.shoe').attr('required',true);
+            $('.eys_color').attr('required',true);
+            $('.hair_color').attr('required',true);
+        }
+
+        function fashion_check() {
+            $('.height').show();
+            $('.bust').show();
+            $('.weight').show();
+            $('.waist').show();
+            $('.hips').show();
+            $('.shoe').show();
+            $('.eys_color').show();
+            $('.hair_color').show();
+            $('.skin_color').show();
+
+            $('.height').attr('required',true);
+            $('.weight').attr('required',true);
+            $('.waist').attr('required',true);
+            $('.hips').attr('required',true);
+            $('.shoe').attr('required',true);
+            $('.eys_color').attr('required',true);
+            $('.hair_color').attr('required',true);
+        }
+
+         function part_check() {
+            $('.neck').show();
+            $('.wrist').show();
+            $('.skin_color').show();
+            $('.shoe').show();
+
+            $('.neck').attr('required',true);
+            $('.wrist').attr('required',true);
+            $('.skin_color').attr('required',true);
+            $('.shoe').attr('required',true);
+        }
+
+        function fitness_check() {
+            $('.height').show();
+            $('.bust').show();
+            $('.weight').show();
+            $('.waist').show();
+            $('.hips').show();
+            $('.shoe').show();
+            $('.eys_color').show();
+            $('.hair_color').show();
+            $('.skin_color').show();
+
+            $('.height').attr('required',true);
+            $('.weight').attr('required',true);
+            $('.waist').attr('required',true);
+            $('.hips').attr('required',true);
+            $('.shoe').attr('required',true);
+            $('.eys_color').attr('required',true);
+            $('.hair_color').attr('required',true);
+        }
+
+        function hair_check() {
+            $('.eys_color').show();
+            $('.hair_color').show();
+            $('.skin_color').show();
+            $('.hair_type').show();
+
+            $('.hair_type').attr('required',true);
+            $('.skin_color').attr('required',true);
+            $('.eys_color').attr('required',true);
+            $('.hair_color').attr('required',true);
+        }
+
+        function plussize_check() {
+            $('.height').show();
+            $('.bust').show();
+            $('.weight').show();
+            $('.waist').show();
+            $('.hips').show();
+            $('.shoe').show();
+            $('.eys_color').show();
+            $('.hair_color').show();
+            $('.skin_color').show();
+
+            $('.height').attr('required',true);
+            $('.weight').attr('required',true);
+            $('.waist').attr('required',true);
+            $('.hips').attr('required',true);
+            $('.shoe').attr('required',true);
+            $('.eys_color').attr('required',true);
+            $('.hair_color').attr('required',true);
+        }
+
+    </script>
+{% endblock %}

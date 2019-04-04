@@ -19,22 +19,25 @@ class Helper extends Controller
         $this->dataBase = $dataBase;
     }
 
-   public function routeAlias($routes = []){
+    public function routeAlias($routes = [])
+    {
         $routeAlias = [
-          'site_homepage' => 'homepage'
+            'site_homepage' => 'homepage'
         ];
         return $routeAlias;
 
-/*        $return = [];
+        /*        $return = [];
 
-        foreach ($routeAlias as $key => $alias){
-            if(isset($routes[$key]))
-                $return[$key] = $alias;
-        }
+                foreach ($routeAlias as $key => $alias){
+                    if(isset($routes[$key]))
+                        $return[$key] = $alias;
+                }
 
-        foreach ($routes as $key => $route){
+                foreach ($routes as $key => $route){
 
-        }*/
-   }
+                }*/
+    }
+
+
 
 }

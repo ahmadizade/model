@@ -5,7 +5,7 @@ namespace App\Controller\Components\Account;
 use App\Entity\Users;
 use App\Service\ApiHelper;
 use App\Service\Security;
-use App\Service\Validation;
+use App\Service\Validation as Validation;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -22,6 +22,7 @@ class RegisterController extends AbstractController
     public function index(Request $request, Validation $validation, ApiHelper $apiHelper, Security $security)
     {
         $user_id = $security->getUserId();
+
         if($request->isMethod('GET')){
             if($user_id)
                 return $this->redirectToRoute('panel');
@@ -35,16 +36,16 @@ class RegisterController extends AbstractController
         $repository = $em->getRepository(Users::class);
 
         $validate = $validation->Validate([
-            ['type' => 'Int', 'name' => '*phone', 'msg' => 'Please fill your phone number correctly!'],
-            ['type' => 'All', 'name' => '*name', 'msg' => 'Please fill your name correctly!'],
+            ['type' => 'Int', 'name' => '*phone', 'msg' => 'لطفا شماره تلفن همراه خود را به صورت صحیح وارد کنید.'],
+/*            ['type' => 'All', 'name' => '*name', 'msg' => 'Please fill your name correctly!'],*/
             ['type' => 'All', 'name' => '*password', 'msg' => 'Please fill your password correctly!'],
             ['type' => 'All', 'name' => '*password-conf'],
             ['type' => 'MaxLen', 'name' => '*password', 'len' => 25],
             ['type' => 'MinLen', 'name' => '*password', 'len' => 8],
         ]);
-
-        if ($validate['status'] == false)
-            return $apiHelper->CustomResponse($validate['message'], 0);
+        $_POST['name'] = 's';
+        if (!$validate)
+            return $apiHelper->CustomResponse($validation->errorMessage);
 
         if($repository->isDuplicate($_POST['phone']))
             return $apiHelper->CustomResponse('This Phone number registered before !', 0);
