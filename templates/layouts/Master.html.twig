@@ -83,21 +83,35 @@
 {% block body %}
     <header id="main-header">
         <nav class="container flex flex-between flex-c">
-            <div id="logo">
-                <h2>
-                    <a href="">
-                        مدلینگ
-                        <img src="{{ asset('assets/image/logo.png','cdn') }}" alt="" title="">
-                    </a>
-                </h2>
-            </div>
-            <div class="nav-links" >
-                <ul class="flex">
-                    <li><a href="">صفحه اصلی</a></li>
-                    <li><a href="">تماس با ما</a></li>
-                    <li><a href="">درباره ما</a></li>
-                </ul>
-            </div>
+{#            <div id="logo">#}
+{#                <h2>#}
+{#                    <a href="">#}
+{#                        مدلینگ#}
+{#                        <img src="{{ asset('assets/image/logo.png','cdn') }}" alt="" title="">#}
+{#                    </a>#}
+{#                </h2>#}
+{#            </div>#}
+{#            *********************************************************************#}
+
+                <nav class="stroke">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">More</a></li>
+                        <li><a href="#">Nice staff</a></li>
+                    </ul>
+                </nav>
+
+
+{#            *******************************************************************#}
+{#            <div class="nav-links" >#}
+{#                <ul class="flex">#}
+{#                    <li><a href="">صفحه اصلی</a></li>#}
+{#                    <li><a href="">تماس با ما</a></li>#}
+{#                    <li><a href="">درباره ما</a></li>#}
+{#                </ul>#}
+{#            </div>#}
             <div class="accounting">
                 <a href="#accounting-modal" class="fancybox accounting-btn">معروفم کن</a>
             </div>

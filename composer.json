@@ -35,6 +35,11 @@
         "symfony/web-server-bundle": "*"
     },
     "config": {
+        "secure-http":false,
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        },
         "preferred-install": {
             "*": "dist"
         },
