@@ -64,16 +64,19 @@
         <link rel="stylesheet" href="{{ asset('assets/css/style.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/responsive.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css','cdn') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/mobile.css','cdn') }}">
+
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <script src="https://oss.mSSaxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
         <![endif]-->
     {% endblock %}
 
     {% block custom_style_sheets %}{% endblock %}
 
     {% block header_scripts %}
-        {#<script src="{{ asset('assets/js/jquery.js') }}"></script>#}
+        <script src="{{ asset('assets/js/jquery.js') }}"></script>
     {% endblock %}
 
 
@@ -110,6 +113,35 @@
                 {#<a href="#accounting-modal" class="fancybox accounting-btn">معروفم کن</a>#}
             {#</div>#}
         </nav>
+        {#    **********************************menu new ************************************#}
+
+        <div id='cssmenu'>
+            <ul>
+                <li><a href='#'>Home</a></li>
+                <li class='active'><a href='#'>Products</a>
+                    <ul>
+                        <li><a href='#'>Product 1</a>
+                            <ul>
+                                <li><a href='#'>Sub Product</a></li>
+                                <li><a href='#'>Sub Product</a></li>
+                            </ul>
+                        </li>
+                        <li><a href='#'>Product 2</a>
+                            <ul>
+                                <li><a href='#'>Sub Product</a></li>
+                                <li><a href='#'>Sub Product</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href='#'>About</a></li>
+                <li><a href='#'>Contact</a></li>
+            </ul>
+        </div>
+
+
+        {#    **********************************menu new ************************************#}
+
         </section>
     </header>
     <div class="slider"></div>
@@ -343,8 +375,24 @@
     <script src="{{ asset('assets/js/jquery.min.js','cdn') }}" ></script>
     <script src="{{ asset('assets/js/jquery.fancybox.min.js','cdn') }}" ></script>
     <script src="{{ asset('assets/js/swiper.min.js','cdn') }}" ></script>
+    <script src="{{ asset('assets/js/script-nav.js','cdn') }}" ></script>
+
 {% endblock %}
     <script src="{{ asset('assets/js/scripts.js','cdn') }}" ></script>
 {% block custom_footer_scripts %}{% endblock %}
+
+
+
+
+
+
+{#___________________________________________________________________________________#}
+
+
+
+
+
 </body>
+
+
 </html>

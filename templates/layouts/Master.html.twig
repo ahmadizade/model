@@ -51,6 +51,15 @@
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/144-144.png','cdn') }}">
     {% block meta %}{% endblock %}
     {% block style_sheets %}
+
+
+{#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+{#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
+{#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>#}
+
+
+        {#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
         {#{% if app.request.getHost() != 'vanak.local' %}
             <link rel="stylesheet" href="{{ asset('assets/css/minify.css') }}?v={{ assets_version }}">
         {% else %}
@@ -81,46 +90,47 @@
 </head>
 <body>
 {% block body %}
-    <header id="main-header">
-        <nav class="container flex flex-between flex-c">
-{#            <div id="logo">#}
-{#                <h2>#}
-{#                    <a href="">#}
-{#                        مدلینگ#}
-{#                        <img src="{{ asset('assets/image/logo.png','cdn') }}" alt="" title="">#}
-{#                    </a>#}
-{#                </h2>#}
-{#            </div>#}
-{#            *********************************************************************#}
-
-                <nav class="stroke">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Downloads</a></li>
-                        <li><a href="#">More</a></li>
-                        <li><a href="#">Nice staff</a></li>
+{#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+{#    First Section#}
+    <section class="first-section">
+        <img class="bg-img" src="assets/image/modelling.jpg">
+        <div class="container">
+            <header class="header-main flex-between">
+                <nav class="header-nav">
+                    <ul class="flex">
+                        <li><a href="#"
+                               title="تماس با ما">تماس با ما</a></li>
+                        <li><a href="#"
+                               title="درباره ما">درباره ما</a></li>
+                        <li><a href="#"
+                               title="قوانین و مقررات">قوانین و مقررات</a></li>
+                        <li><a href="#"
+                               title=" افتخارات ">افتخارات</a></li>
                     </ul>
                 </nav>
+                    <img class="header-logo" src="assets/image/logo.png">
+                <div class="accounting">
+                    <a href="#accounting-modal" class="fancybox"> <button class="accounting-btn"> معروفم کن </button></a>
+                </div>
+            </header>
+        </div>
 
-
-{#            *******************************************************************#}
-{#            <div class="nav-links" >#}
-{#                <ul class="flex">#}
-{#                    <li><a href="">صفحه اصلی</a></li>#}
-{#                    <li><a href="">تماس با ما</a></li>#}
-{#                    <li><a href="">درباره ما</a></li>#}
-{#                </ul>#}
-{#            </div>#}
-            <div class="accounting">
-                <a href="#accounting-modal" class="fancybox accounting-btn">معروفم کن</a>
+        <div class="container">
+            <div class="headline">
+                <img src="assets/image/heading-left.png" class="headline-img">
+                <h4 class="heading-center">لیست VIP</h4>
+                <img src="assets/image/heading-left.png" class="headline-img">
             </div>
-        </nav>
-    </header>
-    <div class="slider"></div>
+        </div>
+
+    </section>
+    {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+    {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ SECOND SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
     <main>
         {% block main %}
+
         <section class="black-pattern intro">
             <div class="container">
                 <div class="flex-c ">

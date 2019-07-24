@@ -1,4 +1,5 @@
 ﻿@import url(fonts.css);
+@import url(./scss/styleplus.css);
 
 .flex {
     display: -webkit-box;
@@ -75,12 +76,52 @@
 .dn{
     display: none;
 }
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START HEADER +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*//first Section*/
+.first-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
 
-body {
-	font-family: IRANSans !important;
-	font-weight: 300;
-	direction: rtl;
 }
+.header-nav {
+    position: relative;
+    width: 550px;
+    display: inline-block;
+}
+.header-logo {
+    width: 250px;
+    height: 120px;
+    position: relative;
+    display: inline-block;
+    left: 198px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End HEADER +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 275px;
+    height: 50px;
+    top: 75px;
+    color: #f6d555;
+    background-color: rgba(150, 150, 150, 0.15);
+    box-shadow: 0 0 1rem 0 rgb(255, 255, 255);
+}
+.heading-center {
+    font-family: iranyekan;
+    font-size: 20px;
+    margin: 0 20px;
+}
+.headline-img {
+    width: 63px;
+    height: 30px;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End FIRST SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 input{
     direction: rtl;
@@ -155,6 +196,7 @@ input[type=checkbox]:checked + label:before{
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .mt10{
     margin-top: 10px;
@@ -246,7 +288,6 @@ input[type=checkbox]:checked + label:before{
 }
 
 .black-pattern{
-    background: url("../image/black-pattern.jpg") no-repeat;
     width: 100%;
     height: 100%;
     opacity : 1;
@@ -254,156 +295,49 @@ input[type=checkbox]:checked + label:before{
     background-size: cover;
 }
 
-section{
-    min-height: 670px;
-    padding: 30px 0;
-}
-/*****************************************************************/
+
+/**************************** NAVIGATION *************************************/
 
 
-/* NAVIGATION */
-nav {
-    /*width: 80%;*/
-    /*margin: 0;*/
-    /*padding: 50px 0;*/
-}
-nav ul {
-    list-style: none;
-    text-align: center;
-}
-nav ul li {
-    display: inline-block;
-}
-nav ul li a {
-    display: block;
-    padding: 15px;
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 10px;
-}
+/* NAVIGATION Transition */
+
 nav ul li a,
 nav ul li a:after,
 nav ul li a:before {
     transition: all .5s;
 }
 nav ul li a:hover {
-    color: #555;
+    color: gold;
 }
 
 
-/* stroke */
-nav.stroke ul li a,
-nav.fill ul li a {
+
+/**************************** NAVIGATION *************************************/
+
+/**************************** accounting-btn *************************************/
+
+.accounting{
+    text-align: center;
+    display: inline-block;
     position: relative;
-}
-nav.stroke ul li a:after,
-nav.fill ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: #aaa;
-    height: 1px;
-}
-nav.stroke ul li a:hover:after {
-    width: 100%;
-}
+    left: 50px;
+    top: 25px;
 
-nav.fill ul li a {
-    transition: all 2s;
 }
-
-nav.fill ul li a:after {
-    text-align: left;
-    content: '.';
-    margin: 0;
-    opacity: 0;
-}
-nav.fill ul li a:hover {
-    color: #fff;
-    z-index: 1;
-}
-nav.fill ul li a:hover:after {
-    z-index: -10;
-    animation: fill 1s forwards;
-    -webkit-animation: fill 1s forwards;
-    -moz-animation: fill 1s forwards;
-    opacity: 1;
-}
-
-
-
-/************************************************************************/
-
-#main-header{
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-}
-#main-header #logo h2 {
+.accounting-btn{
+    font-size: 20px;
     text-align: center;
-    font-size: 0;
-}
-
-#main-header .nav-links{
-    font-size: 16px;
-    font-weight: 500;
-    color: #000;
-}
-
-#main-header .nav-links li{
-    padding: 10px 20px;
-}
-
-#main-header .accounting{
-    text-align: center;
-}
-
-#main-header .accounting-btn{
-    border-radius: 50px;
-    width: 180px;
+    border-radius: 10px;
+    width: 150px;
     border: 1px solid #ffffff;
     background-image: linear-gradient(to right, #d7ab3d 0%, #f6d557 46%, #d7ab3d 100%);
     height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+    color: white;
     text-shadow: 0 0 6px #888;
     cursor: pointer;
     outline: 0;
 }
-.heading{
-    color: #d7ab3d;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 30px;
-    text-align: center;
-}
-.heading:before{
-    content: "";
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
-    background: url("../image/head1.jpg") no-repeat;
-    display: inline-block;
-    width: 63px;
-    height: 30px;
-    margin-left: 5px;
-}
-
-.heading:after{
-    content: url("../image/head1.jpg");
-    margin-right: 5px;
-}
+/**************************** accounting-btn *************************************/
 
 .slider{
     background: url("../image/modelling.jpg") ;
@@ -568,3 +502,44 @@ footer .info{
     color: #222;
 }
 
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DELETE CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*#main-header{*/
+/*    position: absolute;*/
+/*    z-index: 2;*/
+/*    width: 100%;*/
+/*}*/
+
+
+/*section{*/
+/*    min-height: 670px;*/
+/*    padding: 30px 0;*/
+/*}*/
+
+/*.heading{*/
+/*    color: #d7ab3d;*/
+/*    font-size: 32px;*/
+/*    font-weight: 500;*/
+/*    margin-bottom: 30px;*/
+/*    text-align: center;*/
+/*}*/
+/*.heading:before{*/
+/*    content: "";*/
+/*    -moz-transform: scale(-1, 1);*/
+/*    -webkit-transform: scale(-1, 1);*/
+/*    -o-transform: scale(-1, 1);*/
+/*    -ms-transform: scale(-1, 1);*/
+/*    transform: scale(-1, 1);*/
+/*    background: url("../image/head1.jpg") no-repeat;*/
+/*    display: inline-block;*/
+/*    width: 63px;*/
+/*    height: 30px;*/
+/*    margin-left: 5px;*/
+/*}*/
+
+/*.heading:after{*/
+/*    content: url("../image/head1.jpg");*/
+/*    margin-right: 5px;*/
+/*}*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DELETE CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
