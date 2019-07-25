@@ -121,6 +121,7 @@
     height: 30px;
 }
 .topvip-frame {
+    overflow: hidden;
     position: relative;
     margin: 0 20px;
     width: 250px;
@@ -128,7 +129,35 @@
     background-color: rgba(150, 150, 150, 0.15);
     box-shadow: 0 0 1rem 0 rgb(255, 255, 255);
 }
+.topvip-img {
+    z-index: 0;
+    width: 250px;
+    height: 350px;
+
+}
+
+
+
+
+
+
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End FIRST SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ُSTART SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+.intro{
+    color: #d7ab3d;
+    font-family: "Monotype Corsiva";
+    font-size: 50px;
+    font-weight: 400;
+}
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ُSTART SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
 
 input{
     direction: rtl;
@@ -420,7 +449,7 @@ nav ul li a:hover {
 }
 
 
-section.intro{
+.intro{
     color: #d7ab3d;
     font-family: "Monotype Corsiva";
     font-size: 50px;

@@ -44,6 +44,7 @@ img {
   height: 50px; }
 
 .frame-footer {
+  z-index: 1;
   position: absolute;
   display: flex;
   align-items: center;
