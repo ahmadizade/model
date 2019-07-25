@@ -135,17 +135,28 @@
     height: 350px;
 
 }
-
-
-
-
-
-
-
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End FIRST SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ُSTART SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+.second-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
+}
+.black-pattern{
+    position: relative;
+    opacity : 1;
+    z-index: -1;
+    background-size: cover;
+}
+
+.intro{
+    color: #d7ab3d;
+    font-family: "Monotype Corsiva";
+    font-size: 50px;
+    font-weight: 400;
+}
 
 .intro{
     color: #d7ab3d;
@@ -155,9 +166,37 @@
 }
 
 
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ُSTART SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.king, .queen{
+    text-align: center;
+    margin: 0 40px;
+}
 
 
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START THIRD SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.third-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
+}
+
+.white-pattern {
+    position: relative;
+    opacity : 1;
+    z-index: -1;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END THIRD SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 input{
     direction: rtl;
@@ -307,30 +346,6 @@ input[type=checkbox]:checked + label:before{
 }
 
 
-.white-pattern{
-    position: relative;
-}
-.white-pattern:after {
-    content : "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #fff url("../image/white-pattern.png") repeat;
-    width: 100%;
-    height: 100%;
-    opacity : 0.1;
-    z-index: -1;
-}
-
-.black-pattern{
-    width: 100%;
-    height: 100%;
-    opacity : 1;
-    z-index: -1;
-    background-size: cover;
-}
-
 
 /**************************** NAVIGATION *************************************/
 
@@ -448,17 +463,6 @@ nav ul li a:hover {
     display: block;
 }
 
-
-.intro{
-    color: #d7ab3d;
-    font-family: "Monotype Corsiva";
-    font-size: 50px;
-    font-weight: 400;
-}
-
-.king, .queen{
-    text-align: center;
-}
 
 section.last-vip{
     text-align: center;
