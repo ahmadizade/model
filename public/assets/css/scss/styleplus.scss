@@ -39,6 +39,16 @@ img {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.bg-frame {
+  z-index: -1;
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  //top: 0;
+  //bottom: 0;
+  //-o-object-fit: cover;
+  //object-fit: cover;
+}
 .null {
   width: 100%;
   height: 50px;

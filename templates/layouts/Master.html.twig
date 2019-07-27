@@ -21,7 +21,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="apple-mobile-web-app-title" content="ستاره ونک"/><!-- Site name -->
-    <meta name="msapplication-tooltip" content="خرید بلیط هواپیما + رزرو هتل و تور | ستاره ونک"/><!-- Site name | Site Description -->
+    <meta name="msapplication-tooltip" content="خرید بلیط هواپیما + رزرو هتل و تور | ستاره ونک"/>
+    <!-- Site name | Site Description -->
     <meta name="msapplication-starturl" content="https://setarehvanak.com"/><!-- Site url -->
     <meta name="msapplication-navbutton-color" content="#0F6843"/><!-- Site Unique background Color -->
     <meta name="msapplication-TileColor" content="#fff"/><!-- Site Unique background Color -->
@@ -46,17 +47,17 @@
         <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('assets/img/icons/48-48.png','cdn') }}">
         <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/icons/96-96.png','cdn') }}">
         <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/img/icons/16-16.png','cdn') }}">#}
-    <link rel="manifest" href="{{ asset('manifest.json','cdn')}}">
+    <link rel="manifest" href="{{ asset('manifest.json','cdn') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/144-144.png','cdn') }}">
     {% block meta %}{% endblock %}
     {% block style_sheets %}
 
 
-{#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+        {#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
-{#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
-{#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>#}
+        {#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
+        {#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>#}
 
 
         {#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
@@ -76,8 +77,8 @@
         <link rel="stylesheet" href="{{ asset('assets/css/fonts.css','cdn') }}">
 
         <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
     {% endblock %}
 
@@ -89,11 +90,13 @@
 
 
 
+
+
 </head>
 <body>
 {% block body %}
-{#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
-{#    First Section#}
+    {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+    {#    First Section#}
     <section class="first-section">
         <img class="bg-img" src="assets/image/modelling.jpg">
         <div class="container">
@@ -110,25 +113,27 @@
                                title=" افتخارات ">افتخارات</a></li>
                     </ul>
                 </nav>
-                    <img class="header-logo" src="assets/image/logo.png">
+                <img class="header-logo" src="assets/image/logo.png">
                 <div class="accounting">
-                    <a href="#accounting-modal" class="fancybox"> <button class="accounting-btn"> معروفم کن </button></a>
+                    <a href="#accounting-modal" class="fancybox">
+                        <button class="accounting-btn"> معروفم کن</button>
+                    </a>
                 </div>
             </header>
         </div>
 
         <div class="container">
             <div class="headline">
-                <img src="assets/image/heading-left.png" class="headline-img">
+                <img src="assets/image/heading-right.png" class="headline-img">
                 <h4 class="heading-center">لیست VIP</h4>
                 <img src="assets/image/heading-left.png" class="headline-img">
             </div>
         </div>
 
-<div class="null">
+        <div class="null">
 
-</div>
-{#++++++++++++++++++++++++++++++++++++++ VIP LIST#}
+        </div>
+        {#++++++++++++++++++++++++++++++++++++++ VIP LIST#}
         <div class="container">
             <div class="flex">
                 <div class="topvip-frame">
@@ -159,155 +164,171 @@
     <main>
         {% block main %}
 
-        <section class="second-section black-pattern intro">
-            <img class="bg-img" src=".\assets\image\pattern\pattern.1.jpg">
-            <div class="flex-c">
-                <img src="{{ asset('assets/image/head.png') }}">
-            </div>
-            <div class="container">
-                <div class="flex-c flex-around mt40">
-                    <div class="queen ">
-                        <p>Queen</p>
-                        <img src="{{ asset('assets/image/queen.png') }}">
-                    </div>
-                    <div class="intro">
-                        <img src="{{ asset('assets/image/bitmap.png') }}">
-                    </div>
-                    <div class="king">
-                        <p>KING</p>
-                        <img src="{{ asset('assets/image/queen.png') }}">
+            <section class="second-section black-pattern intro">
+                <img class="bg-img" src=".\assets\image\pattern\pattern.1.jpg">
+                <div class="flex-c">
+                    <img src="{{ asset('assets/image/head.png') }}">
+                </div>
+                <div class="container">
+                    <div class="flex-c flex-around mt40">
+                        <div class="queen ">
+                            <p>Queen</p>
+                            <img src="{{ asset('assets/image/queen.png') }}">
+                        </div>
+                        <div class="intro">
+                            <img src="{{ asset('assets/image/bitmap.png') }}">
+                        </div>
+                        <div class="king">
+                            <p>KING</p>
+                            <img src="{{ asset('assets/image/queen.png') }}">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
 
             {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SECOND SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
             {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++START THIRD SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
+            {#    ++++++++++++++++++++++++++++++++++++++++++++++ START SWIPER TEST ++++++++++++++++++++++++++++++++++++++++++++#}
 
-            <section class="third-section white-pattern">
-                <img class="bg-img" src=".\assets\image\pattern\pattern.1.jpg">
+<section class="flex flex-column" style="background-image: url({{ asset('assets/image/pattern/pattern.1.jpg','cdn') }});">
 
-{#                <div class="null">#}
+{#    //////////////////////////////// HEAD GOLD \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#}
+    <div class="null">
 
-{#                </div>#}
-                <div class="flex-c">
-                    <img src="{{ asset('assets/image/head.png') }}">
-                </div>
-                <div class="container" style="overflow: hidden">
-                <h2 class="heading">آخرین کاربران VIP</h2>
-                <div class="vip-slider-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+    </div>
+    <div class="flex-c">
+        <img src="{{ asset('assets/image/head.png') }}">
+    </div>
+    <div class="container">
+        <div class="headline">
+            <img src="assets/image/heading-right.png" class="headline-img">
+            <h4 class="heading-center">لیست VIP</h4>
+            <img src="assets/image/heading-left.png" class="headline-img">
+        </div>
+    </div>
+
+{#    //////////////////////////////// HEAD GOLD \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#}
+
+    <div class="vip-slider-container" style="height: 600px;position: relative;max-width: 100%;overflow: hidden">
+                                <div class="swiper-wrapper" style="position: absolute;top: 40px;overflow: hidden">
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> سلطان رحیمی </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> اکبر مقصودی </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> ساسان عین اللهی </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> امیر ملکی </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="usr-box flex-column">
+                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
+                                            <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                    <div class="vip-slider-pagination flex-c" style="position: relative">
+                                    </div>
+
+                                    <div class="vip-slider-button-next"></div>
+                                    <div class="vip-slider-button-prev"></div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+
+</section>
+{#                            <div class="more flex-c mt30">#}
+{#                                <a class="cbtn btn-yellow btn-lg" href="">مشاهده لیست کاربران VIP</a>#}
+{#                            </div>#}
+
+
+            {#            +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++END SWIPER TEST ++++++++++++++++++++++++++++++++++++++++++++#}
+            {#        </section>#}
+            <section class="black-pattern top-cat">
+                <div class="container-fluid" style="overflow: hidden">
+                    {#
+                                    <h2 class="heading">برترین دسته بندی ها</h2>
+                    #}
+                    <div class="top-cat-slider-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
                             </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="usr-box flex-column">
-                                <div class="usr-img" style="background-image: url({{ asset('assets/image/user.png','cdn') }})"></div>
-                                <div class="usr-title flex-column flex-c"> علی رحیمی </div>
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
                             </div>
                         </div>
                     </div>
-                    <div class="vip-slider-pagination"></div>
-                    <div class="vip-slider-button-next"></div>
-                    <div class="vip-slider-button-prev"></div>
                 </div>
+            </section>
 
-                <div class="more flex-c mt30">
-                    <a class="cbtn btn-yellow btn-lg" href="">مشاهده لیست کاربران VIP</a>
-                </div>
-            </div>
-        </section>
-        <section class="black-pattern top-cat">
-            <div class="container-fluid" style="overflow: hidden">
-{#
-                <h2 class="heading">برترین دسته بندی ها</h2>
-#}
-                <div class="top-cat-slider-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+            <section class="info">
+                <h2 class="heading">نحوه کار سایت</h2>
+                <div class="container">
+                    <div class="flex-around">
+                        <div class="col-7 box">
+                            <p class="title">ثبت نام</p>
+                            <p class="desc">
+                                شسشسشسشس
+                            </p>
                         </div>
-
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
+                        <div class="col-7 box">
+                            <p class="title">ثبت نام</p>
+                            <p class="desc">
+                                شسشسشسشس
+                            </p>
                         </div>
-
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat2.jpg','cdn') }}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="{{ asset('assets/image/cat1.jpg','cdn') }}">
+                        <div class="col-7 box">
+                            <p class="title">ثبت نام</p>
+                            <p class="desc">
+                                شسشسشسشس
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="info">
-            <h2 class="heading">نحوه کار سایت</h2>
-            <div class="container">
-                <div class="flex-around">
-                    <div class="col-7 box">
-                        <p class="title">ثبت نام</p>
-                        <p class="desc">
-                            شسشسشسشس
-                        </p>
-                    </div>
-                    <div class="col-7 box">
-                        <p class="title">ثبت نام</p>
-                        <p class="desc">
-                            شسشسشسشس
-                        </p>
-                    </div>
-                    <div class="col-7 box">
-                        <p class="title">ثبت نام</p>
-                        <p class="desc">
-                            شسشسشسشس
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
         {% endblock main %}
     </main>
 
@@ -317,7 +338,9 @@
             <div class="newsletter col-8"></div>
             <div class="about-us col-8">
                 <h3>درباره ما</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero maiores molestiae non nulla numquam omnis possimus provident quas quasi voluptatum! Alias consequatur cupiditate ipsam nesciunt odit praesentium provident, quis velit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero maiores molestiae non nulla numquam
+                    omnis possimus provident quas quasi voluptatum! Alias consequatur cupiditate ipsam nesciunt odit
+                    praesentium provident, quis velit.</p>
             </div>
         </div>
         <div class="copy-right flex flex-c">
@@ -327,7 +350,7 @@
 
 
 
-    <div id="accounting-modal" class="modal" style="display: none;max-width: 400px" >
+    <div id="accounting-modal" class="modal" style="display: none;max-width: 400px">
         <div data-tabindex="accounting" class="white-pattern">
             <div class="tab-title">
                 <div data-tab="reg" class="active">
@@ -348,30 +371,34 @@
                         <input type="password" name="password" id="reg_pass" placeholder="" required="required">
 
                         <label for="reg_pass_conf" class="required"> تکرار رمز عبور:</label>
-                        <input type="password" name="password-conf" id="reg_pass_conf" placeholder="" required="required">
+                        <input type="password" name="password-conf" id="reg_pass_conf" placeholder=""
+                               required="required">
 
 
                         <div id="registercaptcha" class="recaptcha"></div>
 
                         <div class="flex checkbox">
-                            <input id="general-rules" name="rules" type="checkbox" >
-                            <label for="general-rules"><i class="icon-vanak-check-2"></i><a target="_blank" href="">قوانین و مقررات</a> را می پذیرم.</label>
+                            <input id="general-rules" name="rules" type="checkbox">
+                            <label for="general-rules"><i class="icon-vanak-check-2"></i><a target="_blank" href="">قوانین
+                                    و مقررات</a> را می پذیرم.</label>
                         </div>
 
-                        <button type="submit" class="cbtn btn-yellow btn-lg"><span>ثبت نام <i class="icon-vanak-user no-rotate"></i></span></button>
+                        <button type="submit" class="cbtn btn-yellow btn-lg"><span>ثبت نام <i
+                                        class="icon-vanak-user no-rotate"></i></span></button>
 
                         <div class="clearfix"></div>
-                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a href="#forget-modal">کلیک کنید</a> </span></p>
+                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a
+                                        href="#forget-modal">کلیک کنید</a> </span></p>
                         <div class="clearfix"></div>
                     </form>
                 </div>
                 <div data-tabc="login">
                     <form id="login-form" data-url="{{ path('login') }}">
                         <label for="login_user">شماره موبایل: </label>
-                        <input type="text" name="username" id="login_user" required >
+                        <input type="text" name="username" id="login_user" required>
 
-                        <label for="login_pass" >رمز عبور: </label>
-                        <input type="password" name="password" id="login_pass" required >
+                        <label for="login_pass">رمز عبور: </label>
+                        <input type="password" name="password" id="login_pass" required>
 
                         <div id="recaptchaa" class="recaptcha"></div>
 
@@ -380,10 +407,11 @@
                             <label for="login_remmberMe">مرا به خاطر بسپار</label>
                         </div>
 
-                        <button type="submit" class="cbtn btn-lg btn-yellow">ورود به پنل کاربری </button>
+                        <button type="submit" class="cbtn btn-lg btn-yellow">ورود به پنل کاربری</button>
 
                         <div class="clearfix"></div>
-                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a href="#forget">کلیک کنید</a> </span></p>
+                        <p class="forgotPass"><span>رمز عبور خود را فراموش کرده‌اید؟ <a
+                                        href="#forget">کلیک کنید</a> </span></p>
                         <div class="clearfix"></div>
 
                     </form>
@@ -398,11 +426,11 @@
 
 
 {% block footer_scripts %}
-    <script src="{{ asset('assets/js/jquery.min.js','cdn') }}" ></script>
-    <script src="{{ asset('assets/js/jquery.fancybox.min.js','cdn') }}" ></script>
-    <script src="{{ asset('assets/js/swiper.min.js','cdn') }}" ></script>
+    <script src="{{ asset('assets/js/jquery.min.js','cdn') }}"></script>
+    <script src="{{ asset('assets/js/jquery.fancybox.min.js','cdn') }}"></script>
+    <script src="{{ asset('assets/js/swiper.min.js','cdn') }}"></script>
 {% endblock %}
-    <script src="{{ asset('assets/js/scripts.js','cdn') }}" ></script>
+<script src="{{ asset('assets/js/scripts.js','cdn') }}"></script>
 {% block custom_footer_scripts %}{% endblock %}
 </body>
 </html>
