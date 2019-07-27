@@ -52,29 +52,16 @@
     <meta name="msapplication-TileImage" content="{{ asset('assets/img/icons/144-144.png','cdn') }}">
     {% block meta %}{% endblock %}
     {% block style_sheets %}
+{#        // cas // css // css // cas // css // css //cas // css // css //cas // css Import // css //cas // css // css //cas // css // css //cas // css // css //#}
 
-
-        {#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
-
-        {#        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
-        {#        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>#}
-
-
-        {#        +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ BOOTSTRAP +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
-        {#{% if app.request.getHost() != 'vanak.local' %}
-            <link rel="stylesheet" href="{{ asset('assets/css/minify.css') }}?v={{ assets_version }}">
-        {% else %}
-            <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}?v={{ assets_version }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/stylesheet.css') }}?v={{ assets_version }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/common-css.css') }}?v={{ assets_version }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/new-styles.css') }}?v={{ assets_version }}">
-        {% endif %}#}
         <link rel="stylesheet" href="{{ asset('assets/css/reset.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/responsive.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css','cdn') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/fonts.css','cdn') }}">
+
+        {#        // cas // css // css // cas // css // css //cas // css // css //cas Import // css // css //cas // css // css //cas // css // css //cas // css // css //#}
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -93,12 +80,11 @@
 
 
 </head>
-<body>
+<body style="background-image: url({{ asset('assets/image/pattern/p[attern3.jpeg','cdn') }});background-size: cover;background-attachment: fixed;background-position: center;">
 {% block body %}
     {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
     {#    First Section#}
     <section class="first-section">
-        <img class="bg-img" src="assets/image/modelling.jpg">
         <div class="container">
             <header class="header-main flex-between">
                 <nav class="header-nav">
@@ -113,7 +99,7 @@
                                title=" افتخارات ">افتخارات</a></li>
                     </ul>
                 </nav>
-                <img class="header-logo" src="assets/image/logo.png">
+{#                <img class="header-logo" src="assets/image/logo.png">#}
                 <div class="accounting">
                     <a href="#accounting-modal" class="fancybox">
                         <button class="accounting-btn"> معروفم کن</button>
@@ -164,8 +150,7 @@
     <main>
         {% block main %}
 
-            <section class="second-section black-pattern intro">
-                <img class="bg-img" src=".\assets\image\pattern\pattern.1.jpg">
+            <section class="second-section black-pattern intro" >
                 <div class="flex-c">
                     <img src="{{ asset('assets/image/head.png') }}">
                 </div>
