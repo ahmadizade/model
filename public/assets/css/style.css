@@ -193,6 +193,45 @@
     margin-top: 30px;
 }
 
+.usr-box{
+    height: 400px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    z-index: -1;
+}
+.usr-img{
+    height: 350px;
+    background-size: cover;
+    background:top no-repeat;
+    border-radius: 5px 5px 0 0;
+}
+.slide-frame {
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 356px;
+}
+.usr-title{
+    color: #d7ab3d;
+    font-family: IRANSans !important;
+    font-size: 15px;
+    font-weight: 500;
+    background: #000;
+    height: 50px;
+    border-radius: 0 0 5px 5px;
+    background: rgba(0,0,0,1);
+    background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(51%, rgba(18,18,18,1)), color-stop(100%, rgba(0,0,0,1)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
+}
+
+
 
 
 
@@ -224,8 +263,7 @@
     position: relative;
 }
 .pic-description {
-    top: 100px;
-    right: 70px;
+    top: 120px;
     position: absolute;
     color: gold;
     font-family: iranyekan;
@@ -511,36 +549,6 @@ nav ul li a:hover {
 
 section.last-vip{
     text-align: center;
-}
-
-.usr-box{
-    height: 400px;
-    border-radius: 5px;
-    border: 1px solid #000;
-    z-index: -1;
-}
-.usr-box .usr-img{
-    height: 350px;
-    background-size: cover;
-    background:top no-repeat;
-    border-radius: 5px 5px 0 0;
-}
-.usr-box .usr-title{
-    color: #d7ab3d;
-    font-family: IRANSans !important;
-    font-size: 15px;
-    font-weight: 500;
-    background: #000;
-    height: 50px;
-    border-radius: 0 0 5px 5px;
-    background: rgba(0,0,0,1);
-    background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(51%, rgba(18,18,18,1)), color-stop(100%, rgba(0,0,0,1)));
-    background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
-    background: -o-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
-    background: -ms-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(18,18,18,1) 51%, rgba(0,0,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
 }
 
 section.top-cat{
