@@ -82,7 +82,6 @@
     width: 100%;
     min-height: 670px;
     position: relative;
-
 }
 .header-nav {
     position: relative;
@@ -192,7 +191,6 @@
 
 .vip-slider-pagination {
     margin-top: 30px;
-
 }
 
 
@@ -202,6 +200,48 @@
 
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END THIRD SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START fourth SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.fourth-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
+}
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END fourth SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START fifth SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.fifth-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
+}
+.pic-description {
+    top: 100px;
+    right: 70px;
+    position: absolute;
+    color: gold;
+    font-family: iranyekan;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: center;
+    width: 200px;
+}
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END fifth SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
 
 input{
     direction: rtl;
@@ -477,6 +517,7 @@ section.last-vip{
     height: 400px;
     border-radius: 5px;
     border: 1px solid #000;
+    z-index: -1;
 }
 .usr-box .usr-img{
     height: 350px;
