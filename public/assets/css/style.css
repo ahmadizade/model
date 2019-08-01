@@ -1,4 +1,4 @@
-﻿@import url(fonts.css);
+﻿@import url(./fonts.css);
 @import url(./scss/styleplus.css);
 
 .flex {
@@ -80,12 +80,12 @@
 /*//first Section*/
 .first-section {
     width: 100%;
-    min-height: 670px;
+    height: 800px;
     position: relative;
 }
 .header-nav {
     position: relative;
-    width: 550px;
+    width: 600px;
     display: inline-block;
 }
 .header-logo {
@@ -95,6 +95,24 @@
     display: inline-block;
     left: 198px;
 }
+/**************************** NAVIGATION *************************************/
+
+
+/* NAVIGATION Transition */
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+nav ul li a:hover {
+    color: gold;
+}
+
+
+
+/**************************** NAVIGATION *************************************/
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End HEADER +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .headline {
@@ -119,6 +137,15 @@
     width: 63px;
     height: 30px;
 }
+.topvip-frame-2 {
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px;
+    width: 250px;
+    height: 350px;
+    background-color: rgba(150, 150, 150, 0.15);
+    box-shadow: 0 0 1rem 0 rgb(255, 255, 255);
+}
 .topvip-frame {
     overflow: hidden;
     position: relative;
@@ -132,8 +159,26 @@
     z-index: 0;
     width: 250px;
     height: 350px;
+}
+.popular {
+    position: absolute;
+    top: 600px;
+    width: 500px;
+    font-family: iranyekan;
+    text-align: center;
+}
+.popular a {
+
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+.flesh {
+    position:relative;
+    top: 525px;
 
 }
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End FIRST SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ُSTART SECOND SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -216,7 +261,7 @@
 .usr-title{
     color: #d7ab3d;
     font-family: IRANSans !important;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: 500;
     background: #000;
     height: 50px;
@@ -244,7 +289,8 @@
 
 .fourth-section {
     width: 100%;
-    min-height: 670px;
+    height: 650px;
+    /*min-height: 670px;*/
     position: relative;
 }
 
@@ -261,9 +307,13 @@
     width: 100%;
     min-height: 670px;
     position: relative;
+    height: 600px;
+    max-width: 100%;
+    overflow: hidden;
+    /*top: 40px;*/
 }
 .pic-description {
-    top: 120px;
+    top: 80px;
     position: absolute;
     color: gold;
     font-family: iranyekan;
@@ -275,6 +325,226 @@
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END fifth SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+    /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++CONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.ok-content {
+    text-align: center;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px;
+    border: solid 1px gold;
+    box-shadow: 0 0 1rem 0 rgba(255, 247, 5, 0.75);
+}
+
+.ok-content-right {
+    position: relative;
+    width: 50%;
+    height: 350px;
+}
+
+.otherpage-content-left {
+    position: relative;
+    width: 50%;
+    height: 400px;
+}
+/*.otherpage-content-left > img {*/
+/*    margin-top: 50px;*/
+/*    width: 400px;*/
+/*    height: 300px;*/
+/*    !*border: solid 1px #262524;*!*/
+/*    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.75);*/
+/*}*/
+
+
+.ok-content-right-content {
+    margin-right: 280px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 550px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
+    padding: 10px;
+    color: gold;
+}
+.ok-content-right-content:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
+    border: 1px solid #d7ab3d;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.ok-content-right-content > p {
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.ok-content-right-content-bottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ok-content-right-content-bottom > h3 {
+    color: gold;
+}
+
+.ok-content-right-content-bottom > p {
+    color: white;
+    margin-right: 20px;
+    margin-left: 15px;
+    font-size: 23px;
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++CONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+
+
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++  CONTENT REVERCE CONTENT REVERCECONTENT REVERCECONTENT REVERCECONTENT REVERCE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.ok-content-reverse {
+    text-align: center;
+    color: gold;
+    background: url(../image/pattern/574964.jpg) repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border: solid 1px gold;
+    box-shadow: 0 0 1rem 0 rgba(255, 247, 5, 0.75);
+}
+
+.ok-content-right-reverse {
+    position: relative;
+    width: 50%;
+    height: 350px;
+}
+
+.otherpage-content-left-reverse {
+    position: relative;
+    width: 50%;
+    height: 400px;
+}
+
+.otherpage-content-left-reverse > img {
+    margin-top: 50px;
+    width: 400px;
+    height: 300px;
+    /*border: solid 1px #262524;*/
+    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.75);
+}
+
+
+.ok-content-right-content-reverse {
+    margin-right: 280px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 550px;
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
+    padding: 10px;
+    color: #fff;
+}
+.ok-content-right-content-reverse:hover {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
+    border: 1px solid #d7ab3d;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.ok-content-right-content-reverse > p {
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.ok-content-right-content-bottom-reverse {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.ok-content-right-content-bottom-reverse > h3 {
+    color: gold;
+}
+
+.ok-content-right-content-bottom-reverse > p {
+    color: white;
+    margin-right: 20px;
+    margin-left: 15px;
+    font-size: 23px;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++  CONTENT REVERCE CONTENT REVERCECONTENT REVERCECONTENT REVERCECONTENT REVERCE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++ STAR CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    color: white;
+    font-size: 24px;
+}
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    width: 1.2em;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    color: gold;
+    content: "\2605";
+    position: absolute;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++ STAR CSS ++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++CONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.sixth-section {
+    width: 100%;
+    min-height: 670px;
+    position: relative;
+    height: 600px;
+    max-width: 100%;
+    overflow: hidden;
+    /*top: 40px;*/
+}
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 
 input{
@@ -426,23 +696,6 @@ input[type=checkbox]:checked + label:before{
 
 
 
-/**************************** NAVIGATION *************************************/
-
-
-/* NAVIGATION Transition */
-
-nav ul li a,
-nav ul li a:after,
-nav ul li a:before {
-    transition: all .5s;
-}
-nav ul li a:hover {
-    color: white;
-}
-
-
-
-/**************************** NAVIGATION *************************************/
 
 /**************************** accounting-btn *************************************/
 
@@ -556,35 +809,6 @@ section.top-cat img{
     width: 100%;
 }
 
-section.info{
-    background: url("../image/modelling.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section.info .box{
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    color: #fff;
-    min-height: 200px;
-}
-
-section.info .box:hover{
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
-    border: 1px solid #d7ab3d;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-section.info .box .title{
-    text-align: center;
-    color: #d7ab3d;
-}
-
-footer .info{
-    color: #fff;
-    padding: 40px 0;
-}
 
 .copy-right{
     background-image: linear-gradient(to right, #eec358 0%, #e8aa11 33%, #e8aa11 49%, #e8aa11 67%, #eec358 100%);
@@ -631,5 +855,37 @@ footer .info{
 /*    content: url("../image/head1.jpg");*/
 /*    margin-right: 5px;*/
 /*}*/
+
+
+/*section.info{*/
+/*    background: url("../image/modelling.jpg");*/
+/*    background-size: cover;*/
+/*    background-attachment: fixed;*/
+/*}*/
+
+/*section.info .box{*/
+/*    border-radius: 5px;*/
+/*    border: 1px solid #ddd;*/
+/*    padding: 10px;*/
+/*    color: #fff;*/
+/*    min-height: 200px;*/
+/*}*/
+
+/*section.info .box:hover{*/
+/*    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);*/
+/*    border: 1px solid #d7ab3d;*/
+/*    background-color: rgba(0, 0, 0, 0.8);*/
+/*}*/
+
+/*section.info .box .title{*/
+/*    text-align: center;*/
+/*    color: #d7ab3d;*/
+/*}*/
+
+/*footer .info{*/
+/*    color: #fff;*/
+/*    padding: 40px 0;*/
+/*}*/
+
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DELETE CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

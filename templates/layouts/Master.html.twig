@@ -75,28 +75,34 @@
         {#<script src="{{ asset('assets/js/jquery.js') }}"></script>#}
     {% endblock %}
 
-
-
-
-
 </head>
-<body style="background-image: url({{ asset('assets/image/pattern/p[attern3.jpeg','cdn') }});background-size: cover;background-attachment: fixed;background-position: center;">
+<style>
+    .swiper-slide {
+        height: 400px;
+    }
+    .vip-slider-container {
+        height: 392px;
+    }
+</style>
+<body>
 {% block body %}
     {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
     {#    First Section#}
-    <section class="first-section">
+    <section class="first-section" style="background-image: url({{ asset('assets/image/pattern/pattern.1.jpg','cdn') }});">
         <div class="container">
             <header class="header-main flex-between">
                 <nav class="header-nav">
                     <ul class="flex">
+                        <li><a style="color: gold;" href="#"
+                               title="تماس با ما">صفحه اصلی</a></li>
                         <li><a href="#"
-                               title="تماس با ما">تماس با ما</a></li>
+                               title="درباره ما">بلاگ</a></li>
                         <li><a href="#"
-                               title="درباره ما">درباره ما</a></li>
-                        <li><a href="#"
-                               title="قوانین و مقررات">قوانین و مقررات</a></li>
+                               title="قوانین و مقررات">بهترین ها</a></li>
                         <li><a href="#"
                                title=" افتخارات ">افتخارات</a></li>
+                        <li><a href="#"
+                               title=" افتخارات ">درباره ما</a></li>
                     </ul>
                 </nav>
 {#                <img class="header-logo" src="assets/image/logo.png">#}
@@ -108,40 +114,54 @@
             </header>
         </div>
 
-        <div class="container">
-            <div class="headline">
-                <img src="assets/image/heading-right.png" class="headline-img">
-                <h4 class="heading-center">لیست VIP</h4>
-                <img src="assets/image/heading-left.png" class="headline-img">
-            </div>
-        </div>
+{#        <div class="container">#}
+{#            <div class="headline">#}
+{#                <img src="assets/image/heading-right.png" class="headline-img">#}
+{#                <h4 class="heading-center">لیست VIP</h4>#}
+{#                <img src="assets/image/heading-left.png" class="headline-img">#}
+{#            </div>#}
+{#        </div>#}
 
         <div class="null">
 
         </div>
-        {#++++++++++++++++++++++++++++++++++++++ VIP LIST#}
+        {#++++++++++++++++++++++++++++++++++++++ تو معروف بشی من محبوب می شم#}
         <div class="container">
-            <div class="flex">
-                <div class="topvip-frame">
-                    <img src="assets/image/topvip.jpg" class="topvip-img" title="New Vip User">
-                    <div class="frame-footer">
-                        <h4>فاطمه احمدی</h4>
-                    </div>
-                </div>
-                <div class="topvip-frame">
-                    <img src="assets/image/topvip2.jpg" class="topvip-img" title="New Vip User">
-                    <div class="frame-footer">
-                        <h4>علی محمدی</h4>
-                    </div>
-                </div>
-                <div class="topvip-frame">
-                    <img src="assets/image/topvip3.jpg" class="topvip-img" title="New Vip User">
-                    <div class="frame-footer">
-                        <h4>علی رحیمی</h4>
-                    </div>
-                </div>
-            </div>
+             <div class="popular container-border">
+                 <a href="#">تو معروف بشی من محبوب می شم</a>
+             </div>
         </div>
+        <div class="container flex-c flesh">
+            <img class="flex-c" src="assets/image/icon/1.svg">
+        </div>
+
+        {#++++++++++++++++++++++++++++++++++++++ تو معروف بشی من محبوب می شم#}
+
+        {#++++++++++++++++++++++++++++++++++++++ VIP LIST#}
+
+        {#++++++++++++++++++++++++++++++++++++++ VIP LIST#}
+{#        <div class="container">#}
+{#            <div class="flex">#}
+{#                <div class="topvip-frame">#}
+{#                    <img src="assets/image/topvip.jpg" class="topvip-img" title="New Vip User">#}
+{#                    <div class="frame-footer">#}
+{#                        <h4>فاطمه احمدی</h4>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="topvip-frame">#}
+{#                    <img src="assets/image/topvip2.jpg" class="topvip-img" title="New Vip User">#}
+{#                    <div class="frame-footer">#}
+{#                        <h4>علی محمدی</h4>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="topvip-frame">#}
+{#                    <img src="assets/image/topvip3.jpg" class="topvip-img" title="New Vip User">#}
+{#                    <div class="frame-footer">#}
+{#                        <h4>علی رحیمی</h4>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
     </section>
     {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++END FIRST SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
@@ -150,7 +170,7 @@
     <main>
         {% block main %}
 
-            <section class="second-section black-pattern intro" >
+            <section class="second-section black-pattern intro container-border" style="background-image: url({{ asset('assets/image/pattern/design.jpg','cdn') }});">
                 <div class="flex-c">
                     <img src="{{ asset('assets/image/head.png') }}">
                 </div>
@@ -198,61 +218,61 @@
 
     {#    ++++++++++++++++++++++++++++++++++++++++++++++ START SWIPER TEST ++++++++++++++++++++++++++++++++++++++++++++#}
 
-    <div class="vip-slider-container" style="position: relative;max-width: 100%;overflow: hidden;height: 403px;">
-                                <div class="swiper-wrapper" style="position: absolute;top: 40px;overflow: hidden">
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> سلطان رحیمی </div>
-                                        </div>
-                                    </div>
+    <div class="vip-slider-container" style="position: relative;max-width: 100%;;top: 40px;overflow: hidden;height: 403px;">
+        <div class="swiper-wrapper" style="position: absolute;overflow: hidden">
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> سلطان رحیمی </div>
+                </div>
+            </div>
 
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> اکبر مقصودی </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> ساسان عین اللهی </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> امیر ملکی </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="usr-box flex-column">
-                                            <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
-                                            <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
-                                        </div>
-                                    </div>
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> اکبر مقصودی </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> ساسان عین اللهی </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> امیر ملکی </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip2.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="usr-box flex-column">
+                    <div class="usr-img" style="background-image: url({{ asset('assets/image/topvip3.jpg','cdn') }})"></div>
+                    <div class="usr-title flex-column flex-c"> کینگ رحیمی </div>
+                </div>
+            </div>
 
-                                </div>
-                                    <div class="vip-slider-pagination flex-c" style="position: relative">
+        </div>
+            <div class="vip-slider-pagination flex-c" style="position: relative">
 
-                                    </div>
+            </div>
 
-                                    <div class="vip-slider-button-next"></div>
-                                    <div class="vip-slider-button-prev"></div>
-                            </div>
+            <div class="vip-slider-button-next"></div>
+            <div class="vip-slider-button-prev"></div>
+    </div>
     {#    ++++++++++++++++++++++++++++++++++++++++++++++ END SWIPER TEST ++++++++++++++++++++++++++++++++++++++++++++#}
 
 </section>
 {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++START fourth SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
 
-            <section class="flex flex-column" style="background-image: url({{ asset('assets/image/pattern/pattern.1.jpg','cdn') }});">
+            <section class="flex flex-column fourth-section" style="background-image: url({{ asset('assets/image/pattern/pattern.1.jpg','cdn') }});">
 
                 {#    //////////////////////////////// HEAD GOLD \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#}
                 <div class="null">
@@ -328,11 +348,11 @@
 
  {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START fifth SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
-<section class="fifth-section">
+<section class="fifth-section"  style="background-image: url({{ asset('assets/image/pattern/pattern.1.jpg','cdn') }});">
             {#    //////////////////////////////// HEAD GOLD \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#}
-            <div class="null">
+{#            <div class="null">#}
 
-            </div>
+{#            </div>#}
             <div class="flex-c">
                 <img src="{{ asset('assets/image/head.png') }}">
             </div>
@@ -343,13 +363,15 @@
                     <img src="assets/image/heading-left.png" class="headline-img">
                 </div>
             </div>
+    <div class="null">
 
+    </div>
             {#    //////////////////////////////// HEAD GOLD \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#}
 
     {#    ++++++++++++++++++++++++++++++++++++++++++++++ START SWIPER TEST ++++++++++++++++++++++++++++++++++++++++++++#}
 
-    <div class="vip-slider-container" style="height: 600px;position: relative;max-width: 100%;overflow: hidden">
-        <div class="swiper-wrapper" style="position: absolute;top: 40px;overflow: hidden">
+    <div class="vip-slider-container">
+        <div class="swiper-wrapper" style="position: absolute;overflow: hidden">
             <div class="swiper-slide">
                 <div class="usr-box flex-column" style="background-color: #0f0f0f;">
 {#                    Picture description#}
@@ -373,7 +395,7 @@
                     {#                    Picture description#}
                     <div class="flex-c">
                         <div class="pic-description">
-                            <h4 style="color: yellow;">بانوان</h4>
+                            <h4 style="color: yellow;">آقایان</h4>
                             <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
                                 پیامک: ۰۹۱۲۸۱۷۳۲۷۸
                                 پست الکترونیکی: info@arman-it.com
@@ -390,7 +412,7 @@
                     {#                    Picture description#}
                     <div class="flex-c">
                         <div class="pic-description">
-                            <h4 style="color: yellow;">بانوان</h4>
+                            <h4 style="color: yellow;">زیورآلات</h4>
                             <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
                                 پیامک: ۰۹۱۲۸۱۷۳۲۷۸
                                 پست الکترونیکی: info@arman-it.com
@@ -408,7 +430,7 @@
                     {#                    Picture description#}
                     <div class="flex-c">
                         <div class="pic-description">
-                            <h4 style="color: yellow;">بانوان</h4>
+                            <h4 style="color: yellow;">کت واک</h4>
                             <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
                                 پیامک: ۰۹۱۲۸۱۷۳۲۷۸
                                 پست الکترونیکی: info@arman-it.com
@@ -425,7 +447,7 @@
                     {#                    Picture description#}
                     <div class="flex-c">
                         <div class="pic-description">
-                            <h4 style="color: yellow;">بانوان</h4>
+                            <h4 style="color: yellow;">کودک مدل</h4>
                             <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
                                 پیامک: ۰۹۱۲۸۱۷۳۲۷۸
                                 پست الکترونیکی: info@arman-it.com
@@ -471,30 +493,241 @@
 
  {#    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END fifth SECTION ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
 
-            <section class="info">
-                <h2 class="heading">نحوه کار سایت</h2>
-                <div class="container">
-                    <div class="flex-around">
-                        <div class="col-7 box">
-                            <p class="title">ثبت نام</p>
-                            <p class="desc">
-                                شسشسشسشس
-                            </p>
-                        </div>
-                        <div class="col-7 box">
-                            <p class="title">ثبت نام</p>
-                            <p class="desc">
-                                شسشسشسشس
-                            </p>
-                        </div>
-                        <div class="col-7 box">
-                            <p class="title">ثبت نام</p>
-                            <p class="desc">
-                                شسشسشسشس
-                            </p>
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++1111111111111111111111111111111111+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+            <div class="flex-around container-border" style="background-image: url({{ asset('assets/image/black/h1.jpg','cdn') }})">
+                <div class="ok-content-right">
+                    <div class="ok-content-right-content">
+                        <p>1) ابتدا دقت داشته باشید حتما آنتی ویروس شما غیرفعال باشد.
+                            2) به اکسترکت فایل های فشرده بپردازید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                        </p>
+                        <div class="ok-content-right-content-bottom">
+                            <h3>کامران صادقی</h3>
+                            <p>Armany Model</p>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
+                <div class="otherpage-content-left">
+                    <div class="model-img">
+                        <img src="{{ asset('assets/image/black/m1.jpg') }}">
+                    </div>
+                </div>
+            </div>
+
+
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++1111111111111111111111111111111111+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2222222222222222222222222222222222+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+{#            <div class="flex-c container-border" style="background-image: url({{ asset('assets/image/black/h1.jpg','cdn') }})">#}
+{#                <div class="ok-content-right">#}
+{#                    <div class="ok-content-right-content">#}
+{#                        <p>1) ابتدا دقت داشته باشید حتما آنتی ویروس شما غیرفعال باشد.#}
+{#                            2) به اکسترکت فایل های فشرده بپردازید.#}
+{#                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از#}
+{#                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.#}
+{#                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از#}
+{#                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.#}
+{#                        </p>#}
+{#                        <div class="ok-content-right-content-bottom">#}
+{#                            <h3>کورش رضایی</h3>#}
+{#                            <p>Armany Model</p>#}
+{#                            <div class="rating">#}
+{#                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>#}
+{#                            </div>#}
+
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="otherpage-content-left">#}
+{#                    <div class="model-img">#}
+{#                        <img src="{{ asset('assets/image/black/m7.png') }}">#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+            <div class="ok-content-reverse container-border" style="background-image: url({{ asset('assets/image/black/h1.jpg','cdn') }})">
+                <div class="ok-content-right-reverse">
+                    <div class="ok-content-right-content-reverse">
+                        <p>1) ابتدا دقت داشته باشید حتما آنتی ویروس شما غیرفعال باشد.
+                            2) به اکسترکت فایل های فشرده بپردازید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                        </p>
+                        <div class="ok-content-right-content-bottom-reverse">
+                            <h3>کامران صادقی</h3>
+                            <p>Armany Model</p>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="otherpage-content-left-reverse">
+                    <div class="model-img">
+                       <img src="{{ asset('assets/image/black/m7.png') }}">
+                    </div>
+                </div>
+            </div>
+
+
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++2222222222222222222222222222222222+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++3333333333333333333333333333333333+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+            <div class="flex-around container-border" style="background-image: url({{ asset('assets/image/black/h1.jpg','cdn') }})">
+                <div class="ok-content-right">
+                    <div class="ok-content-right-content">
+                        <p>1) ابتدا دقت داشته باشید حتما آنتی ویروس شما غیرفعال باشد.
+                            2) به اکسترکت فایل های فشرده بپردازید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                        </p>
+                        <div class="ok-content-right-content-bottom">
+                            <h3>کامبیز معقلی</h3>
+                            <p>Armany Model</p>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="otherpage-content-left">
+                    <div class="model-img">
+                        <img src="{{ asset('assets/image/black/m3.jpg') }}">
+                    </div>
+                </div>
+            </div>
+
+
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++3333333333333333333333333333333333+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++4444444444444444444444444444444444+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+            <div class="ok-content-reverse container-border" style="background-image: url({{ asset('assets/image/black/h1.jpg','cdn') }})">
+                <div class="ok-content-right-reverse">
+                    <div class="ok-content-right-content-reverse">
+                        <p>1) ابتدا دقت داشته باشید حتما آنتی ویروس شما غیرفعال باشد.
+                            2) به اکسترکت فایل های فشرده بپردازید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                            3) فایل ISO بدست آمده را از طریق نرم افزار RUFUS به صورت بوتیبل بر روی فلش خود کپی کنید و یا از
+                            طریق نرم افزارهای رایت ایمیج، آن را بر روی DVD رایت نمایید.
+                        </p>
+                        <div class="ok-content-right-content-bottom-reverse">
+                            <h3>کامران صادقی</h3>
+                            <p>Armany Model</p>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="otherpage-content-left-reverse">
+                    <div class="model-img">
+                        <img src="{{ asset('assets/image/black/m1.jpg') }}">
+                    </div>
+                </div>
+            </div>
+
+            {#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++4444444444444444444444444444444444+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+            {#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#}
+
+
+
+
+
+{#            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/#}
+
+
+
+
+{#            /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/#}
+
+
+
+            <section class="sixth-section" style="background-image: url({{ asset('assets/image/2modelling.jpg','cdn') }})">
+
+                <div class="flex-c">
+                    <img src="{{ asset('assets/image/head.png') }}">
+                </div>
+                <div class="container">
+                    <div class="headline" style="width: 400px">
+                        <img src="assets/image/heading-right.png" class="headline-img">
+                        <h4 class="heading-center">مزایای استفاده از سایت</h4>
+                        <img src="assets/image/heading-left.png" class="headline-img">
+                    </div>
+                </div>
+
+                        <div class="container" style="margin-top: 50px">
+                            <div class="flex">
+                                <div class="topvip-frame">
+                                    <div class="flex-c">
+                                        <div class="pic-description">
+                                            <h4 style="color: yellow;">معروف میشی</h4>
+                                                <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
+                                                    پیامک: ۰۹۱۲۸۱۷۳۲۷۸
+                                                    پست الکترونیکی: info@arman-it.com
+                                                </p>
+                                        </div>
+                                    </div>
+                                    <div class="frame-footer">
+                                        <h4>معروف شو</h4>
+                                    </div>
+                                </div>
+                                <div class="topvip-frame">
+                                    <div class="flex-c">
+                                        <div class="pic-description">
+                                            <h4 style="color: yellow;">پول در میاری</h4>
+                                            <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
+                                                پیامک: ۰۹۱۲۸۱۷۳۲۷۸
+                                                پست الکترونیکی: info@arman-it.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="frame-footer">
+                                        <h4>پولدار شو</h4>
+                                    </div>
+                                </div>
+                                <div class="topvip-frame"><div class="flex-c">
+                                        <div class="pic-description">
+                                            <h4 style="color: yellow;">واست همکار پیدا می کنیم</h4>
+                                            <p>تلفن: ۰۲۱۸۸۶۱۵۱۶۲ فکس: ۰۲۱۸۸۰۶۲۱۷۳
+                                                پیامک: ۰۹۱۲۸۱۷۳۲۷۸
+                                                پست الکترونیکی: info@arman-it.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="frame-footer">
+                                        <h4>همکارات کجان ؟!!</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div class="container">
+
+                </div>
+
+
+
             </section>
         {% endblock main %}
     </main>
@@ -505,9 +738,9 @@
             <div class="newsletter col-8"></div>
             <div class="about-us col-8">
                 <h3>درباره ما</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero maiores molestiae non nulla numquam
-                    omnis possimus provident quas quasi voluptatum! Alias consequatur cupiditate ipsam nesciunt odit
-                    praesentium provident, quis velit.</p>
+                <p>با فراهم شدن این امکان، برای خرید الماس و دسترسی به آیتم هایی که با پرداخت درون برنامه ای آزاد می شوند دیگر دردسرهای خرید گیفت کارد و ... را نخواهید داشت و حالا می توانید به صورت قانونی و با پرداخت هزینه از طریق کارت های شتاب، به راحتی خریدهای خود را انجام دهید.
+
+                    تیم کافه بازار ضمن اعلام این خبر، از کلیه کاربران بازی خواسته تا در صورت بروز هر گونه مشکل در خرید درون برنامه ای از بخش تنظیمات درون بازی و بخش پشتیبانی با آنها در تماس باشند.</p>
             </div>
         </div>
         <div class="copy-right flex flex-c">
