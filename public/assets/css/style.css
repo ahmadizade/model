@@ -113,6 +113,34 @@ nav ul li a:hover {
 
 /**************************** NAVIGATION *************************************/
 
+/**************************** START GOLD Button *************************************/
+
+.accounting{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    left: 50px;
+    top: 25px;
+}
+.header-button{
+    width:100px;
+    height:40px;
+    color:black;
+    font-size: 20px;
+    font-weight:bold;
+    background: #FDE08D;
+    background: -webkit-linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    background: linear-gradient(top, #8f6B29, #FDE08D, #DF9F28);
+    border:#8f6B29 2px solid;
+}
+.header-button:hover{
+    cursor:pointer;
+    background: -webkit-linear-gradient(top, #DF9F28, #FDE08D, #8f6B29);
+    background: linear-gradient(top, #DF9F28, #FDE08D, #8f6B29);
+}
+/**************************** END GOLD Button *************************************/
+
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ End HEADER +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .headline {
@@ -562,25 +590,45 @@ nav ul li a:hover {
     position: relative;
     height: 155px;
     overflow: hidden;
-    background-color: rgba(150, 150, 150, 0.15);
-    box-shadow: 0 0 1rem 0 rgb(255, 255, 255);
-}
 
+    /*gradient*/
+    box-shadow: 0 0 1rem 0 rgb(164, 130, 60);
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    /*gradient*/
+
+    padding: 5px 0 0;
+}
+/*.gradient {*/
+    /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),*/
+    /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+/*}*/
 .mini-frame {
     overflow: hidden;
     position: relative;
     margin: 0 20px;
     width: 150px;
     height: 150px;
-    background-color: rgba(150, 150, 150, 0.15);
-    box-shadow: 0 0 1rem 0 rgb(255, 255, 255);
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
 }
-
 .mini-frame img {
     z-index: 0;
     width: 100%;
     height: 100%;
 }
+.module {
+    max-width: 250px;
+    padding: 1rem;
+    color: white;
+    border: solid 2px;
+    border-image:
+            linear-gradient(
+                    to bottom,
+                    #ffda09,
+                    rgba(0, 0, 0, 0)
+            ) 1 100%;
+}
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 input{
@@ -732,31 +780,6 @@ input[type=checkbox]:checked + label:before{
 
 
 
-
-/**************************** accounting-btn *************************************/
-
-.accounting{
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    left: 50px;
-    top: 25px;
-
-}
-.accounting-btn{
-    font-size: 20px;
-    text-align: center;
-    border-radius: 10px;
-    width: 150px;
-    border: 1px solid #ffffff;
-    background-image: linear-gradient(to right, #d7ab3d 0%, #f6d557 46%, #d7ab3d 100%);
-    height: 48px;
-    color: white;
-    text-shadow: 0 0 6px #888;
-    cursor: pointer;
-    outline: 0;
-}
-/**************************** accounting-btn *************************************/
 
 .slider{
     background: url("../image/modelling.jpg") ;
@@ -923,5 +946,18 @@ section.top-cat img{
 /*    padding: 40px 0;*/
 /*}*/
 
+/*.accounting-btn{*/
+/*font-size: 20px;*/
+/*text-align: center;*/
+/*border-radius: 10px;*/
+/*width: 150px;*/
+/*border: 1px solid #ffffff;*/
+/*background-image: linear-gradient(to right, #d7ab3d 0%, #f6d557 46%, #d7ab3d 100%);*/
+/*height: 48px;*/
+/*color: white;*/
+/*text-shadow: 0 0 6px #888;*/
+/*cursor: pointer;*/
+/*outline: 0;*/
+/*}*/
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ DELETE CLASS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
