@@ -79,10 +79,10 @@ img {
   width: 100%;
   height: 50px;
   bottom: 0;
-  background-color: rgba(52, 52, 52, 0.75);
+  box-shadow: 0 0 1rem 0 rgb(255, 247, 0);
+  background-color: rgba(0, 0, 0, 0.32);
   h4 {
-    color: white;
-    font-family: iranyekan;
+    color: #0a0a0a;
     font-size: 20px;
     font-weight: 500;
   }
@@ -104,7 +104,7 @@ nav {
           color: white;
           font-weight: 800;
           text-transform: uppercase;
-          margin: 0 10px;
+          //margin: 0 10px;
         }
         a:hover {
           display: block;
@@ -113,7 +113,18 @@ nav {
           color: gold;
           font-weight: 800;
           text-transform: uppercase;
-          margin: 0 10px;
+          //Move to left in hover
+          margin: 0 15px;
+          //Move to left in hover
+        }
+        b{
+          text-decoration: none;
+          color: gold;
+          font-weight: 800;
+          margin: 0 5px;
+        }
+        b:hover {
+          color: white;
         }
       }
   }
