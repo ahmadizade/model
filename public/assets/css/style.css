@@ -367,42 +367,20 @@ nav ul li a:hover {
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
     /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++CONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENTCONTENT++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-.ok-content {
-    text-align: center;
-    color: gold;
+.best-biography {
+    position: relative;
+    width: 50%;
+}
+.biography-image {
     display: flex;
-    justify-content: center;
     align-items: center;
-    position: relative;
-    height: 400px;
-    border: solid 1px gold;
-    box-shadow: 0 0 1rem 0 rgba(255, 247, 5, 0.75);
-}
-
-.ok-content-right {
-    position: relative;
-    width: 50%;
-    height: 350px;
-}
-
-.otherpage-content-left {
+    justify-content: center;
     position: relative;
     width: 50%;
     height: 400px;
 }
-/*.otherpage-content-left > img {*/
-/*    margin-top: 50px;*/
-/*    width: 400px;*/
-/*    height: 300px;*/
-/*    !*border: solid 1px #262524;*!*/
-/*    box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.75);*/
-/*}*/
+.biography-text {
 
-
-.ok-content-right-content {
-    margin-right: 20%;
-    margin-top: 5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -415,20 +393,19 @@ nav ul li a:hover {
     padding: 10px;
     color: gold;
 }
-.ok-content-right-content:hover {
+.biography-text:hover {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
     border: 1px solid #d7ab3d;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-
-.ok-content-right-content > p {
+.biography-text > p {
     padding-bottom: 25px;
     margin-bottom: 10px;
     border-bottom: 1px solid gray;
 }
 
-.ok-content-right-content-bottom {
+.biography-bottom {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -436,11 +413,11 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.ok-content-right-content-bottom > h3 {
+.biography-bottom > h3 {
     color: gold;
 }
 
-.ok-content-right-content-bottom > p {
+.biography-bottom > p {
     color: white;
     margin-right: 20px;
     margin-left: 15px;
@@ -454,72 +431,26 @@ nav ul li a:hover {
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++  CONTENT REVERCE CONTENT REVERCECONTENT REVERCECONTENT REVERCECONTENT REVERCE ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-.ok-content-reverse {
-    text-align: center;
-    color: gold;
-    background: url(../image/pattern/574964.jpg) repeat;
-    background-position: center;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
+.best-biography-reverse {
     position: relative;
-    width: 100%;
-    height: 400px;
-    border: solid 1px gold;
-    box-shadow: 0 0 1rem 0 rgba(255, 247, 5, 0.75);
+    /*width: 50%;*/
+    /*height: 350px;*/
 }
-
-.ok-content-right-reverse {
+.biography-image-reverse {
     position: relative;
     width: 50%;
-    height: 350px;
-}
-
-.otherpage-content-left-reverse {
-    position: relative;
-    width: 50%;
+    top: 32px;
     height: 400px;
 }
 
-.otherpage-content-left-reverse > img {
+.biography-image-reverse > img {
     margin-top: 50px;
     width: 400px;
     height: 300px;
     /*border: solid 1px #262524;*/
     box-shadow: 0 0 1rem 0 rgba(255, 255, 255, 0.75);
 }
-
-
-.ok-content-right-content-reverse {
-    margin-top: 25px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 550px;
-    height: 300px;
-    border-radius: 5px;
-    border: 1px solid black;
-    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
-    padding: 10px;
-    color: #fff;
-}
-.ok-content-right-content-reverse:hover {
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23);
-    border: 1px solid #d7ab3d;
-    background-color: rgba(0, 0, 0, 0.3);
-}
-
-
-.ok-content-right-content-reverse > p {
-    padding-bottom: 25px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid gray;
-}
-
-.ok-content-right-content-bottom-reverse {
+.biography-bottom {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -527,11 +458,11 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.ok-content-right-content-bottom-reverse > h3 {
+.biography-bottom > h3 {
     color: gold;
 }
 
-.ok-content-right-content-bottom-reverse > p {
+.biography-bottom > p {
     color: white;
     margin-right: 20px;
     margin-left: 15px;
@@ -588,17 +519,17 @@ nav ul li a:hover {
 .seventh-section {
     width: 100%;
     position: relative;
-    height: 155px;
+    height: 410px;
     overflow: hidden;
-
-    /*gradient*/
-    box-shadow: 0 0 1rem 0 rgb(164, 130, 60);
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-    /*gradient*/
-
+    background-color: #0f0f0f;
+    box-shadow: 0 0 1rem 0 rgb(255, 174, 44);
     padding: 5px 0 0;
 }
+    /*gradient*/
+    /*box-shadow: 0 0 1rem 0 rgb(164, 130, 60);*/
+    /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),*/
+    /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
+    /*gradient*/
 /*.gradient {*/
     /*background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),*/
     /*radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);*/
@@ -617,7 +548,6 @@ nav ul li a:hover {
     height: 100%;
 }
 .module {
-    max-width: 250px;
     padding: 1rem;
     color: white;
     border: solid 2px;
@@ -628,8 +558,71 @@ nav ul li a:hover {
                     rgba(0, 0, 0, 0)
             ) 1 100%;
 }
+.brand-biography {
+    width: 100%;
+    margin-top: 30px;
+}
+.brand-frame {
+    overflow: hidden;
+    position: relative;
+    margin: 0 20px;
+    width: 242px;
+    height: 150px;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0);
+}
+.brand-frame img {
+    z-index: 0;
+    width: 120px;
+    height: 100px;
+}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END SIXTH SECTION +++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ START FOOTER ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.footer {
+    width: 100%;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background-color: #0f0f0f;
+    box-shadow: 0 0 1rem 0 rgb(255, 174, 44);
+    padding: 5px 0 0;
+}
+.footer-bottom {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 50px;
+    /*gradient*/
+    box-shadow: 0 0 1rem 0 rgb(164, 130, 60);
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    /*gradient*/
+}
+.footer-box {
+    position: relative;
+    margin-top: 40px;
+    width: 450px;
+    height: 260px;
+    background-color: rgba(150, 150, 150, 0.15);
+    box-shadow: 0 0 1rem 0 #fcb800;
+    color: gold;
+    text-align: center;
+}
+footer-box p {
+    text-align: center;
+    color: gold;
+
+}
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ END FOOTER +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
 
 input{
     direction: rtl;

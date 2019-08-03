@@ -16,6 +16,15 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.container-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
 a {
   text-decoration: none;
 }
@@ -79,7 +88,7 @@ img {
   }
 }
 
-//+++++++++++++++++++++++++++++++++++++++++ Navigation+++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++HEADER Navigation+++++++++++++++++++++++++++++++++++++++
 nav {
   margin: 0;
   padding: 0;
@@ -110,18 +119,37 @@ nav {
   }
 }
 
-//+++++++++++++++++++++++++++++++++++++++++ Navigation+++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++HEADER Navigation+++++++++++++++++++++++++++++++++++++++
 
-//+++++++++++++++++++++++++++++++++++++++++ Navigation+++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++++++++++++++++++++++++++++FOOTER Navigation+++++++++++++++++++++++++++++++++++++++
+.footer-nav {
+  margin: 0;
+  padding: 0;
+  ul {
+    list-style: none;
+    text-align: center;
+    display: contents;
+    li {
+      margin: 0 10px;
+      font-size: 25px;
+      color: gold;
+      display: inline-block;
+      a{
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 0 10px;
+      }
+    }
+  }
+}
 
-
-
-//+++++++++++++++++++++++++++++++++++++++++ Navigation+++++++++++++++++++++++++++++++++++++++
-
+//+++++++++++++++++++++++++++++++++++++++++FOOTER Navigation+++++++++++++++++++++++++++++++++++++++
 .model-img {
   overflow: hidden;
-  top: 12%;
-  left: 13%;
   width: 400px;
   height: 300px;
   position: absolute;
@@ -135,3 +163,5 @@ nav {
   border: solid 1px gold;
   box-shadow: 0 0 1rem 0 rgba(255, 247, 5, 0.75);
 }
+
+
